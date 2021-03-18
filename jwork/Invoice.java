@@ -1,10 +1,4 @@
 
-/**
- * Write a description of class JobSeeker here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Invoice
 {
     // instance variables - replace the example below with your own
@@ -12,44 +6,61 @@ public class Invoice
     private int idJob;
     private String date;
     private int totalFee;
+    private JobSeeker jobSeeker;
 
     /**
      * Constructor for objects of class JobSeeker
      */
-    public Invoice()
+    public Invoice(int id, int idJob, String date, int totalFee,
+    JobSeeker jobSeeker)
     {
-  
+      this.id = id;
+      this.idJob = idJob;
+      this.date = date;
+      this.totalFee = totalFee;
+      this.jobSeeker = jobSeeker;
     }
     
     public int getId(){
-        return 0;
+        return this.id;
     }
     
     public int getIdJob(){
-        return 0;
+        return this.idJob;
     }
     
     public String getDate(){
-        return "oop";
+        return this.date;
     }    
     
     public int getTotalFee(){
-        return 0;
+        return this.totalFee;
     }
     
-    public void setId(){
-        
+    public JobSeeker getJobSeeker(){
+        return this.jobSeeker;
     }
     
-    public void setIdJob(){
-        
+    public void setId(int id){
+      this.id = id;
+      
     }
     
-    public void setDate(){
-        
+    public void setIdJob(int idJob){
+      this.idJob = idJob;
+       
     }
     
-    public void setTotalFee(){
-        
+    public void setDate(String date){
+      this.date = date;
+         
+    }
+    
+    public void setTotalFee(int totalFee){
+      this.totalFee = totalFee;    
+    }
+    
+    public void setJobSeeker(JobSeeker jobSeeker){
+      this.jobSeeker = jobSeeker;    
     }
 }

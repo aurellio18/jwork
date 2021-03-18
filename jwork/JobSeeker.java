@@ -1,10 +1,4 @@
 
-/**
- * Write a description of class JobSeeker here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class JobSeeker
 {
     // instance variables - replace the example below with your own
@@ -12,53 +6,62 @@ public class JobSeeker
     private String name;
     private String email;
     private String password;
-    private String JoinDate;
+    private String joinDate;
 
     /**
      * Constructor for objects of class JobSeeker
      */
-    public JobSeeker()
+    public JobSeeker(int id, String name, String email, String password, 
+    String joinDate)
     {
-  
+      this.id = id;
+      this.name = name;
+      this.email = email;
+      this.password = password;
+      this.joinDate = joinDate;
     }
     
     public int getId(){
-        return 0;
+        return this.id;
     }
     
     public String getName(){
-        return "oop";
+        return this.name;
     }
     
     public String getEmail(){
-        return "oop";
+        return this.email;
     }    
     
     public String getPassword(){
-        return "oop";
+        return this.password;
     }
     
     public String getJoinDate(){
-        return "oop";
+        return this.joinDate;
     }
     
-    public void setId(){
-        
+    public void setId(int id){
+        this.id = id;
     }
     
-    public void setName(){
-        
+    public void setName(String name){
+        this.name = name;
     }
     
-    public void setEmail(){
-        
+    public void setEmail(String email){
+        this.email = email;
     }
     
-    public void setPassword(){
-        
+    public void setPassword(String password){
+        this.password = password;
     }
     
-    public void setJoinDate(){
-        
+    public void setJoinDate(String joinDate){
+        this.joinDate = joinDate;
+    }
+    
+    public void printData(){
+        System.out.println("Pencari Kerja :" +getName() );
     }
 }

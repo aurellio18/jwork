@@ -1,55 +1,65 @@
 
-/**
- * Write a description of class Job here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Job
 {
     // instance variables - replace the example below with your own
     private int id,fee;
     private String name,category;
-
+    private Recruiter recruiter;
 
     /**
      * Constructor for objects of class JobSeeker
      */
-    public Job()
+    public Job(int id,String name, int fee, String category,
+    Recruiter recruiter)
     {
-  
+      this.id = id;
+      this.name = name;
+      this.fee = fee;
+      this.category = category;
+      this.recruiter = recruiter;
     }
     
     public int getId(){
-        return 0;
+        return this.id;
     }
     
     public String getName(){
-        return "oop";
+        return this.name;
     }
     
     public int getFee(){
-        return 0;
+        return this.fee;
     }    
     
     public String getCategory(){
-        return "oop";
+        return this.category;
     }
     
-    public void setId(){
+    public Recruiter getRecruiter(){
+        return this.recruiter;
+    }
+    
+    public void setId(int id){
+      this.id = id;
         
     }
     
-    public void setName(){
-        
+    public void setName(String name){
+      this.name = name;
+      
     }
     
-    public void setFee(){
-        
+    public void setFee(int fee){
+      this.fee = fee;
+         
     }
     
-    public void setCategory(){
-        
+    public void setCategory(String category){
+      this.category = category;   
     }
-
+    
+    public void setRecruiter(Recruiter recruiter){
+      this.recruiter = recruiter;   
+    }
+    
 }
