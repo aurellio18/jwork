@@ -112,4 +112,9 @@ public class Invoice
     public void setJobSeeker(JobSeeker jobSeeker){
       this.jobSeeker = jobSeeker;    
     }
+    
+    //Print out dari data yang diinput
+    public void printData(){
+        System.out.println("Fee Pekerjaan :" + getTotalFee() );
+    }
 }

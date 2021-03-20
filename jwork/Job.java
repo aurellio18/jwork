@@ -111,4 +111,8 @@ public class Job
       this.recruiter = recruiter;   
     }
     
+    //Print out dari data yang diinput
+    public void printData(){
+        System.out.println("Pekerjaan :" + getName() );
+    }
 }
