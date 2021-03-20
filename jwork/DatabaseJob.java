@@ -1,17 +1,22 @@
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 18-Feb-2021)
+*/
 
 public class DatabaseJob
 {
-    // instance variables - replace the example below with your own
+    // memasukkan variabel yang digunakan
     private String[] listJob;
 
 
     /**
-     * Constructor for objects of class JobSeeker
+     * Constructor untuk objek
      */
     public DatabaseJob()
     {
           
     }
+    
     
     public boolean addJob(Job job){
         return false;
@@ -21,10 +26,19 @@ public class DatabaseJob
         return false;
     }
     
+    /**
+     * getter Job
+     * @return null
+    */  
     public Job getJob(){
         return null;
     }
     
+    
+    /**
+     * getter listJob
+     * @return null
+    */ 
     public String[] getListJob(){
         return null;
     }

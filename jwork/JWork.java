@@ -1,3 +1,7 @@
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 18-Feb-2021)
+*/
 
 public class JWork
 {
