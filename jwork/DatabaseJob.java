@@ -1,8 +1,7 @@
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Feb-2021)
+* @version (Modul 2 - 18-Mar-2021)
 */
-
 public class DatabaseJob
 {
     // memasukkan variabel yang digunakan
