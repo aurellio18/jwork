@@ -10,7 +10,7 @@ public class Invoice
     private int idJob;
     private String date;
     private int totalFee;
-    private JobSeeker jobSeeker;
+    private Jobseeker jobSeeker;
 
     /**
      * Constructor untuk objek
@@ -21,7 +21,7 @@ public class Invoice
      * @param JobSeeker
      */
     public Invoice(int id, int idJob, String date, int totalFee,
-    JobSeeker jobSeeker)
+    Jobseeker jobSeeker)
     {
       this.id = id;
       this.idJob = idJob;
@@ -66,7 +66,7 @@ public class Invoice
      * getter jobSeeker
      * @return jobSeeker
     */  
-    public JobSeeker getJobSeeker(){
+    public Jobseeker getJobSeeker(){
         return this.jobSeeker;
     }
     
@@ -109,7 +109,7 @@ public class Invoice
      * setter jobSeeker
      * @param jobSeeker
     */
-    public void setJobSeeker(JobSeeker jobSeeker){
+    public void setJobSeeker(Jobseeker jobSeeker){
       this.jobSeeker = jobSeeker;    
     }
     

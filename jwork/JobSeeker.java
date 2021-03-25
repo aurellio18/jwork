@@ -3,7 +3,7 @@
 * @version (Modul 2 - 18-Mar-2021)
 */
 
-public class JobSeeker
+public class Jobseeker
 {
     // memasukkan variabel yang digunakan
     private int id;
@@ -20,7 +20,7 @@ public class JobSeeker
      * @param password
      * @param joinDate
      */
-    public JobSeeker(int id, String name, String email, String password, 
+    public Jobseeker(int id, String name, String email, String password, 
     String joinDate)
     {
       this.id = id;
@@ -112,6 +112,11 @@ public class JobSeeker
     
     //Print out dari data yang diinput
     public void printData(){
-        System.out.println("Pencari Kerja :" +getName() );
+        System.out.println("========= JOB SEEKER =========");
+        System.out.println("id :" + getId() );
+        System.out.println("Name :" + getName() );
+        System.out.println("Email :" + getEmail() );
+        System.out.println("Password :" + getPassword());
+        System.out.println("Join :" + getJoinDate() );
     }
 }

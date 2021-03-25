@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=JobSeeker
-comment0.text=\r\n\ @author\ (Aurellio\ Fishandy)\r\n\ @version\ (Modul\ 2\ -\ 18-Feb-2021)\r\n
+comment0.target=Jobseeker
+comment0.text=\r\n\ @author\ (Aurellio\ Fishandy)\r\n\ @version\ (Modul\ 2\ -\ 18-Mar-2021)\r\n
 comment1.params=id\ name\ email\ password\ joinDate
-comment1.target=JobSeeker(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.target=Jobseeker(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ untuk\ objek\r\n\ @param\ id\r\n\ @param\ name\r\n\ @param\ email\r\n\ @param\ password\r\n\ @param\ joinDate\r\n
 comment10.params=password
 comment10.target=void\ setPassword(java.lang.String)

@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=Invoice
-comment0.text=\r\n\ @author\ (Aurellio\ Fishandy)\r\n\ @version\ (Modul\ 2\ -\ 18-Feb-2021)\r\n
+comment0.text=\r\n\ @author\ (Aurellio\ Fishandy)\r\n\ @version\ (Modul\ 2\ -\ 18-Mar-2021)\r\n
 comment1.params=id\ idJob\ date\ totalFee\ jobSeeker
-comment1.target=Invoice(int,\ int,\ java.lang.String,\ int,\ JobSeeker)
+comment1.target=Invoice(int,\ int,\ java.lang.String,\ int,\ Jobseeker)
 comment1.text=\r\n\ Constructor\ untuk\ objek\r\n\ @param\ id\r\n\ @param\ idJob\r\n\ @param\ date\r\n\ @param\ totalFee\r\n\ @param\ JobSeeker\r\n
 comment10.params=totalFee
 comment10.target=void\ setTotalFee(int)
 comment10.text=\r\n\ setter\ totalFee\r\n\ @param\ totalFee\r\n
 comment11.params=jobSeeker
-comment11.target=void\ setJobSeeker(JobSeeker)
+comment11.target=void\ setJobSeeker(Jobseeker)
 comment11.text=\r\n\ setter\ jobSeeker\r\n\ @param\ jobSeeker\r\n
 comment12.params=
 comment12.target=void\ printData()
@@ -25,7 +25,7 @@ comment5.params=
 comment5.target=int\ getTotalFee()
 comment5.text=\r\n\ getter\ totalFee\r\n\ @return\ totalFee\r\n
 comment6.params=
-comment6.target=JobSeeker\ getJobSeeker()
+comment6.target=Jobseeker\ getJobSeeker()
 comment6.text=\r\n\ getter\ jobSeeker\r\n\ @return\ jobSeeker\r\n
 comment7.params=id
 comment7.target=void\ setId(int)

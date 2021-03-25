@@ -75,9 +75,13 @@ public class Location
          
     }
     
-    // print out provinsi yang dimasukkan    
+    //Print out dari data yang diinput
     public void printData(){
-        System.out.println("Provinsi :" +getProvince() );
+        System.out.println("========= LOCATION =========");
+        System.out.println("Province :" + getProvince() );
+        System.out.println("City :" + getCity() );
+        System.out.println("Description :" + getDescription() );
+    
     }
     
 }

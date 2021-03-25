@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=DatabaseJob
-comment1.params=
-comment1.target=DatabaseJob()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ JobSeeker\r\n
+comment0.text=\r\n\ @author\ (Aurellio\ Fishandy)\r\n\ @version\ (Modul\ 2\ -\ 18-Mar-2021)\r\n
+comment1.params=job
+comment1.target=boolean\ addJob(Job)
 comment2.params=job
-comment2.target=boolean\ addJob(Job)
-comment3.params=job
-comment3.target=boolean\ removeJob(Job)
+comment2.target=boolean\ removeJob(Job)
+comment3.params=
+comment3.target=Job\ getJob()
+comment3.text=\r\n\ getter\ Job\r\n\ @return\ null\r\n
 comment4.params=
-comment4.target=Job\ getJob()
-comment5.params=
-comment5.target=java.lang.String[]\ getListJob()
-numComments=6
+comment4.target=java.lang.String[]\ getListJob()
+comment4.text=\r\n\ getter\ listJob\r\n\ @return\ null\r\n
+numComments=5

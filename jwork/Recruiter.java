@@ -115,6 +115,11 @@ public class Recruiter
     
     //Print out dari data yang diinput
     public void printData(){
-        System.out.println("Perekrut :" + getName() );
+        System.out.println("========= Recruiter =========");
+        System.out.println("ID :" + getId() );
+        System.out.println("Name :" + getName() );
+        System.out.println("Email :" + getEmail() );
+        System.out.println("Phone :" + getphoneNumber() );
+        System.out.println("City :" + location.getCity() );
     }
 }

@@ -7,8 +7,9 @@ public class Job
 {
     // memasukkan variabel yang digunakan
     private int id,fee;
-    private String name,category;
+    private String name;
     private Recruiter recruiter;
+    private JobCategory category;
 
     /**
      * Constructor untuk objek
@@ -18,8 +19,8 @@ public class Job
      * @param category
      * @param recruiter
      */
-    public Job(int id,String name, int fee, String category,
-    Recruiter recruiter)
+    public Job(int id,String name, int fee,
+    Recruiter recruiter, JobCategory category)
     {
       this.id = id;
       this.name = name;
@@ -52,13 +53,6 @@ public class Job
         return this.fee;
     }    
     
-    /**
-     * getter category
-     * @return category
-    */
-    public String getCategory(){
-        return this.category;
-    }
     
     /**
      * getter recruiter
@@ -66,6 +60,10 @@ public class Job
     */
     public Recruiter getRecruiter(){
         return this.recruiter;
+    }
+    
+    public JobCategory getCategory(){
+        return this.category;
     }
     
     /**
@@ -96,14 +94,6 @@ public class Job
     }
     
     /**
-     * setter category
-     * @param category
-    */
-    public void setCategory(String category){
-      this.category = category;   
-    }
-    
-    /**
      * setter recruiter
      * @param recruiter
     */
@@ -111,8 +101,22 @@ public class Job
       this.recruiter = recruiter;   
     }
     
+    /**
+     * setter Category
+     * @param Category
+    */
+    public void setCategory(JobCategory category){
+      this.category = category;   
+    }
+    
     //Print out dari data yang diinput
     public void printData(){
-        System.out.println("Pekerjaan :" + getName() );
+        System.out.println("========= JOB =========");
+        System.out.println("id :" + getId() );
+        System.out.println("Name :" + getName() );
+        System.out.println("Recruiter :" + getRecruiter().getName() );
+        System.out.println("Fee :" + getFee() );
+        System.out.println("City :" + recruiter.getLocation().getCity());
+        System.out.println("Category :" + getCategory() );
     }
 }

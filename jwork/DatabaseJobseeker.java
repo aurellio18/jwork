@@ -2,16 +2,16 @@
 * @author (Aurellio Fishandy)
 * @version (Modul 2 - 18-Mar-2021)
 */
-public class DatabaseJob
+public class DatabaseJobseeker
 {
     // memasukkan variabel yang digunakan
-    private static String[] listJob;    
+    private static String[] listJobseeker;    
     
-    public static boolean addJob(Job job){
+    public static boolean addJobseeker(Jobseeker jobseeker){
         return false;
     }
     
-    public static boolean removeJob(Job job){
+    public static boolean removeJobseeker(Jobseeker jobseeker){
         return false;
     }
     
@@ -19,7 +19,7 @@ public class DatabaseJob
      * getter Job
      * @return null
     */  
-    public static Job getJob(){
+    public static Jobseeker getJobseeker(){
         return null;
     }
     
@@ -28,7 +28,7 @@ public class DatabaseJob
      * getter listJob
      * @return null
     */ 
-    public static String[] getListJob(){
+    public static String[] getListJobseeker(){
         return null;
     }
     

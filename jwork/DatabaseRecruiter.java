@@ -6,31 +6,21 @@
 public class DatabaseRecruiter
 {
     // memasukkan variabel yang digunakan
-    private String[] listRecruiter;
-
-
-    /**
-     * Constructor untuk objek
-     */
-    public DatabaseRecruiter()
-    {
-          
-    }
+    private static String[] listRecruiter;
     
-    
-    public boolean addRecruiter(Recruiter recruiter){
+    public static boolean addRecruiter(Recruiter recruiter){
         return false;
     }
     
-    public boolean removeRecruiter(Recruiter recruiter){
+    public static boolean removeRecruiter(Recruiter recruiter){
         return false;
     }
     
-    public Job getRecruiter(){
+    public static Recruiter getRecruiter(){
         return null;
     }
     
-    public String[] getListRecruiter(){
+    public static String[] getListRecruiter(){
         return null;
     }
     
