@@ -4,15 +4,15 @@ public enum PaymentType
     BankPayment("Bank Payment"),
     EwalletPayment("Ewallet Payment");
     
-    private String paymenttype;
+    private String paymentType;
     
-    PaymentType(String paymenttype){
-        this.paymenttype = paymenttype;
+    PaymentType(String paymentType){
+        this.paymentType = paymentType;
     }
     
     @Override
     public String toString(){
-        return paymenttype;
+        return paymentType;
     }
     
 }

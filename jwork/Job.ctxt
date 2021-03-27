@@ -9,6 +9,7 @@ comment10.target=void\ setRecruiter(Recruiter)
 comment10.text=\r\n\ setter\ recruiter\r\n\ @param\ recruiter\r\n
 comment11.params=category
 comment11.target=void\ setCategory(JobCategory)
+comment11.text=\r\n\ setter\ Category\r\n\ @param\ Category\r\n
 comment12.params=
 comment12.target=void\ printData()
 comment2.params=
