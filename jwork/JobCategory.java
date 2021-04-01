@@ -15,8 +15,7 @@ public enum JobCategory
     JobCategory(String jobcategory){
         this.jobcategory = jobcategory;
     }
-    
-    @Override
+
     public String toString(){
         return jobcategory;
     }

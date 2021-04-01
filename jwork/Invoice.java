@@ -3,16 +3,16 @@
 * @version (Modul 2 - 18-Mar-2021)
 */
 
-public class Invoice
+public abstract class Invoice
 {
     // memasukkan variabel yang digunakan
     private int id;
-    private int idJob;
+    private Job job;
     private String date;
-    private int totalFee;
+    protected int totalFee;
     private Jobseeker jobSeeker;
     private PaymentType paymentType;
-    private InvoiceStatus status;
+    private InvoiceStatus invoiceStatus;
 
     /**
      * Constructor untuk objek
@@ -22,16 +22,16 @@ public class Invoice
      * @param totalFee
      * @param JobSeeker
      */
-    public Invoice(int id, int idJob, String date, int totalFee,
-    Jobseeker jobSeeker, PaymentType paymentType, InvoiceStatus status)
+    public Invoice(int id, Job job, String date, int totalFee,
+    Jobseeker jobSeeker, PaymentType paymentType, InvoiceStatus invoiceStatus)
     {
       this.id = id;
-      this.idJob = idJob;
+      this.job = job;
       this.date = date;
       this.totalFee = totalFee;
       this.jobSeeker = jobSeeker;
       this.paymentType = paymentType;
-      this.status = status;
+      this.invoiceStatus = invoiceStatus;
     }
     
     /**
@@ -46,8 +46,8 @@ public class Invoice
      * getter idJob
      * @return idJob
     */  
-    public int getIdJob(){
-        return this.idJob;
+    public Job getJob(){
+        return this.job;
     }
     
     /**
@@ -74,12 +74,10 @@ public class Invoice
         return this.jobSeeker;
     }
     
-    public PaymentType getPaymentType(){
-        return this.paymentType;
-    }
+    public abstract PaymentType getPaymentType();
     
     public InvoiceStatus getInvoiceStatus(){
-        return this.status;
+        return this.invoiceStatus;
     }
     
     /**
@@ -95,8 +93,8 @@ public class Invoice
      * setter idJob
      * @param idJob
     */
-    public void setIdJob(int idJob){
-      this.idJob = idJob;
+    public void setId(Job job){
+      this.job = job;
        
     }
     
@@ -113,9 +111,7 @@ public class Invoice
      * setter totalFee
      * @param totalFee
     */
-    public void setTotalFee(int totalFee){
-      this.totalFee = totalFee;    
-    }
+    public abstract void setTotalFee();
     
     /**
      * setter jobSeeker
@@ -129,19 +125,12 @@ public class Invoice
       this.paymentType = paymentType;    
     }
     
-    public void setInvoiceStatus(InvoiceStatus status){
-      this.status = status;    
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus){
+      this.invoiceStatus = invoiceStatus;    
     }
 
     
     //Print out dari data yang diinput
-    public void printData(){
-        System.out.println("========= INVOICE =========");
-        System.out.println("ID :" + getId() );
-        System.out.println("ID Job:" + getIdJob() );
-        System.out.println("Date :" + getDate() );
-        System.out.println("Seeker :" + getJobSeeker().getName() );
-        System.out.println("Fee :" + getTotalFee());
-        System.out.println("Status :" + getInvoiceStatus());
-    }
+    public abstract void printData();
+    
 }

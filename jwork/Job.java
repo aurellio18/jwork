@@ -112,11 +112,11 @@ public class Job
     //Print out dari data yang diinput
     public void printData(){
         System.out.println("========= JOB =========");
-        System.out.println("id :" + getId() );
-        System.out.println("Name :" + getName() );
+        System.out.println("id :" + id );
+        System.out.println("Name :" + name );
         System.out.println("Recruiter :" + getRecruiter().getName() );
-        System.out.println("Fee :" + getFee() );
+        System.out.println("Fee :" + fee );
         System.out.println("City :" + recruiter.getLocation().getCity());
-        System.out.println("Category :" + getCategory() );
+        System.out.println("Category :" + category );
     }
 }

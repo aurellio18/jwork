@@ -113,10 +113,10 @@ public class Jobseeker
     //Print out dari data yang diinput
     public void printData(){
         System.out.println("========= JOB SEEKER =========");
-        System.out.println("id :" + getId() );
-        System.out.println("Name :" + getName() );
-        System.out.println("Email :" + getEmail() );
-        System.out.println("Password :" + getPassword());
-        System.out.println("Join :" + getJoinDate() );
+        System.out.println("id :" + id );
+        System.out.println("Name :" + name );
+        System.out.println("Email :" + email );
+        System.out.println("Password :" + password);
+        System.out.println("Join :" + joinDate );
     }
 }
