@@ -22,15 +22,13 @@ public abstract class Invoice
      * @param totalFee
      * @param JobSeeker
      */
-    public Invoice(int id, Job job, String date, int totalFee,
-    Jobseeker jobSeeker, PaymentType paymentType, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job, String date, 
+    Jobseeker jobSeeker, InvoiceStatus invoiceStatus)
     {
       this.id = id;
       this.job = job;
       this.date = date;
-      this.totalFee = totalFee;
       this.jobSeeker = jobSeeker;
-      this.paymentType = paymentType;
       this.invoiceStatus = invoiceStatus;
     }
     
