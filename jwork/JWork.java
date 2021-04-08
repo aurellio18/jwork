@@ -23,9 +23,9 @@ public class JWork
         //BankPayment bank1 = new BankPayment(1, job1, "2 September 2020", jobSeek1,  InvoiceStatus.Finished);
         //BankPayment bank2 = new BankPayment(1, job1, "2 September 2020", jobSeek1,  InvoiceStatus.Finished, 100);
         
-        Jobseeker jobseeker1 = new Jobseeker(1, "Arel", ".aurellio@gmail.com", "aaaa",new GregorianCalendar(2021, 4, 8));
+        Jobseeker jobseeker1 = new Jobseeker(1, "Arel", "aurellio@gmail.com", "aaaH123",new GregorianCalendar(2021, 4, 8));
         Jobseeker jobseeker2 = new Jobseeker(2, "Arel", "aurellio@gmail.com", "Hai123", 2021, 1, 1);
-        Jobseeker jobseeker3 = new Jobseeker(3, "Arel", "aurellio@gmail.com", "hai123");
+        Jobseeker jobseeker3 = new Jobseeker(3, "Arel", "aurellio@gmail.com", "hai123", null);
         
         jobseeker1.toString();
         System.out.println(jobseeker1.toString());
