@@ -67,6 +67,15 @@ public class Bonus
         
     }
     
+    public String toString(){
+        return  "Id = "  + id +
+                "Referral Code = "+ referralCode +
+                "Extra Fee = "+ extraFee +
+                "Min Total Fee =" + minTotalFee +
+                "Active Status =" + active ;
+    }
+    
+    /**
     //Print out dari data yang diinput
     public void printData(){
         System.out.println("========= Bonus =========");
@@ -75,6 +84,6 @@ public class Bonus
         System.out.println("Extra Fee :" + extraFee );
         System.out.println("MinTotalFee :" + minTotalFee );
         System.out.println("Active :" + active );
-    }
+    }*/
     
 }

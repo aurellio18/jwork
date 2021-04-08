@@ -113,6 +113,14 @@ public class Recruiter
       this.location = location;    
     }
     
+    public String toString(){
+        return  "Id = "  + id  +
+                "Name = "+ name +
+                "PhoneNumber = "+ phoneNumber +
+                "Location = "+ location.getCity();
+    }
+    
+    /**
     //Print out dari data yang diinput
     public void printData(){
         System.out.println("========= Recruiter =========");
@@ -121,5 +129,5 @@ public class Recruiter
         System.out.println("Email :" + email );
         System.out.println("Phone :" + phoneNumber );
         System.out.println("City :" + location.getCity() );
-    }
+    }*/
 }

@@ -75,6 +75,12 @@ public class Location
          
     }
     
+    public String toString(){
+        return  "Province = "  + province  +
+                "City = "+ city +
+                "Description = "+ description;
+    }
+    /**
     //Print out dari data yang diinput
     public void printData(){
         System.out.println("========= LOCATION =========");
@@ -82,6 +88,6 @@ public class Location
         System.out.println("City :" + city );
         System.out.println("Description :" + description );
     
-    }
+    }*/
     
 }

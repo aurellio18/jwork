@@ -3,7 +3,7 @@ public class BankPayment extends Invoice
 {
     // instance variables - replace the example below with your own
     private PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
-    private int adminFee;
+    private int adminFee = 0;
 
     /**
      * Constructor for objects of class EwalletPayment

@@ -109,6 +109,16 @@ public class Job
       this.category = category;   
     }
     
+    public String toString(){
+        return  "Id = "  + id  +
+                "Name = "+ name +
+                "Recruiter = "+ getRecruiter().getName() +
+                "City = "+ recruiter.getLocation().getCity() +
+                "Fee = "+ fee +
+                "Category ="+ category ;
+    }
+    
+    /**
     //Print out dari data yang diinput
     public void printData(){
         System.out.println("========= JOB =========");
@@ -118,5 +128,5 @@ public class Job
         System.out.println("Fee :" + fee );
         System.out.println("City :" + recruiter.getLocation().getCity());
         System.out.println("Category :" + category );
-    }
+    }*/
 }
