@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class EwalletPayment extends Invoice
 {
@@ -46,10 +49,16 @@ public class EwalletPayment extends Invoice
     
     @Override
     public String toString(){
+        String strDate = "" ;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = getDate().getTime();
+        if (date != null){
+        strDate = dateFormat.format(date);
+        }
         if(getJob().getFee() != totalFee){
         return  "Id = "  + super.getId() +
                 "\nIdJob= "+ super.getJob().getName() +
-                "\nDate = "+ super.getDate() +
+                "\nDate = "+ strDate +
                 "\nSeeker = "+ super.getJobSeeker().getName() +
                 "\nFee ="+ super.totalFee +
                 "\nBonus =" + bonus.getReferralCode() +
@@ -58,7 +67,7 @@ public class EwalletPayment extends Invoice
             } else{
         return  "Id = "  + super.getId() +
                 "\nIdJob= "+ super.getJob().getName() +
-                "\nDate = "+ super.getDate() +
+                "\nDate = "+ strDate +
                 "\nSeeker = "+ super.getJobSeeker().getName() +
                 "\nFee ="+ super.totalFee +
                 "\nStatus =" + super.getInvoiceStatus().toString() +
