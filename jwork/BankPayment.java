@@ -8,16 +8,16 @@ public class BankPayment extends Invoice
     /**
      * Constructor for objects of class EwalletPayment
      */
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public BankPayment(int id, Job job,Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
-        super(id,job,date,jobseeker,invoiceStatus);
+        super(id,job,jobseeker,invoiceStatus);
         
     }
     
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, 
+    public BankPayment(int id, Job job, Jobseeker jobseeker, 
     InvoiceStatus invoiceStatus,int adminFee)
     {
-        super(id,job,date,jobseeker,invoiceStatus);
+        super(id,job,jobseeker,invoiceStatus);
         this.adminFee = adminFee;
         
     }
@@ -44,7 +44,17 @@ public class BankPayment extends Invoice
     }
     }
     
-    @Override
+    public String toString(){
+        return  "Id = "  + super.getId() +
+                "\nIdJob= "+ super.getJob().getName() +
+                "\nDate = "+ super.getDate() +
+                "\nSeeker = "+ super.getJobSeeker().getName() +
+                "\nAdmin Fee ="+ adminFee +
+                "\nTotal Fee =" + super.totalFee +
+                "\nStatus =" + super.getInvoiceStatus().toString() +
+                "\nPayment Type = " + PAYMENT_TYPE.toString() ;
+            }
+    /**@Override
     public void printData()
     {
         System.out.println("==========Invoice==========");
@@ -56,5 +66,5 @@ public class BankPayment extends Invoice
         System.out.println("Total Fee        = "+ super.totalFee);
         System.out.println("Status           = "+ super.getInvoiceStatus().toString());
         System.out.println("Payment Type     = "+ PAYMENT_TYPE.toString());
-    }
+    }*/
 }

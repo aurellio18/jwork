@@ -52,7 +52,6 @@ public class Jobseeker
         this.name = name;
         this.setEmail(email);
         this.setPassword(password);
-        this.joinDate = new GregorianCalendar();
     }
     
     /**

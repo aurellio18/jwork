@@ -1,3 +1,6 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
 * @author (Aurellio Fishandy)
 * @version (Modul 2 - 18-Mar-2021)
@@ -8,7 +11,7 @@ public abstract class Invoice
     // memasukkan variabel yang digunakan
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobSeeker;
     private PaymentType paymentType;
@@ -22,12 +25,11 @@ public abstract class Invoice
      * @param totalFee
      * @param JobSeeker
      */
-    public Invoice(int id, Job job, String date, 
+    public Invoice(int id, Job job, 
     Jobseeker jobSeeker, InvoiceStatus invoiceStatus)
     {
       this.id = id;
       this.job = job;
-      this.date = date;
       this.jobSeeker = jobSeeker;
       this.invoiceStatus = invoiceStatus;
     }
@@ -52,7 +54,7 @@ public abstract class Invoice
      * getter date
      * @return date
     */  
-    public String getDate(){
+    public Calendar getDate(){
         return this.date;
     }    
     
@@ -100,9 +102,13 @@ public abstract class Invoice
      * setter date
      * @param date
     */
-    public void setDate(String date){
+    public void setDate(Calendar date){
       this.date = date;
          
+    }
+    
+    public void setDate(int year, int month, int dayOfMonth){
+        this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
     /**
@@ -127,8 +133,8 @@ public abstract class Invoice
       this.invoiceStatus = invoiceStatus;    
     }
 
-    
+    public abstract String toString();
     //Print out dari data yang diinput
-    public abstract void printData();
+    //public abstract void printData();
     
 }
