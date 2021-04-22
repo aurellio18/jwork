@@ -10,8 +10,19 @@ public class JWork
 {
     public static void main (String[] args) 
     {
-        Location location1 = new Location("Bandung", "Bandung", "Bandung");
-        Recruiter recruite1 = new Recruiter(1, "Aurellio", "aurelliofishandy@yahoo.com", "0812883728", location1);
+        Location loc1 = new Location("Bandung", "Bandung", "Bandung");
+        DatabaseRecruiter.addRecruiter( new Recruiter(1, "Aurellio", "aurelliofishandy@yahoo.com", "0812883728", loc1));
+        DatabaseRecruiter.addRecruiter( new Recruiter(2, "Aurellio", "aurelliofishandy@yahoo.com", "0812883728", loc1));
+        DatabaseRecruiter.addRecruiter( new Recruiter(3, "ferlinda", "ferlinda@gmail.com", "0812883728", loc1));
+
+        DatabaseJobseeker.addJobseeker(new Jobseeker(1, "Arel", "aurellio@gmail.com", "aaa123",new GregorianCalendar(2021, 4, 8));
+        DatabaseJobseeker.addJobseeker(new Jobseeker(1, "Arel", "aurellio@gmail.com", "aaa123",new GregorianCalendar(2021, 4, 8));
+        DatabaseJobseeker.addJobseeker(new Jobseeker(1, "ferlinda", "ferlinda@gmail.com", "aaa123",new GregorianCalendar(2021, 4, 8));
+        DatabaseJob.addJob(new Job(1, "Designer", DatabaseRecruiter.getRecruiterById(1), 10, JobCategory.WebDeveloper));
+        DatabaseJob.addJob(new Job(1, "Designer", DatabaseRecruiter.getRecruiterById(1), 10, JobCategory.WebDeveloper));
+        DatabaseJob.addJob(new Job(1, "Designer", DatabaseRecruiter.getRecruiterById(1), 10, JobCategory.DataAnalyst));
+
+        //Recruiter recruite1 = new Recruiter(1, "Aurellio", "aurelliofishandy@yahoo.com", "0812883728", location1);
         //Jobseeker jobSeek1 = new Jobseeker(1 ,"tayo", "tayo@gmail.com", "abcd1234", "10 Maret 2021");
         Bonus bonus1 = new Bonus(1, "astagfirullah", 100, 10, true);
         Bonus bonus2 = new Bonus(2, null, 200, 20, true);

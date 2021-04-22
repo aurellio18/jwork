@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,16 +12,15 @@ public class BankPayment extends Invoice
     /**
      * Constructor for objects of class EwalletPayment
      */
-    public BankPayment(int id, Job job,Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
-        super(id,job,jobseeker,invoiceStatus);
+        super(id,jobs,jobseeker);
         
     }
     
-    public BankPayment(int id, Job job, Jobseeker jobseeker, 
-    InvoiceStatus invoiceStatus,int adminFee)
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker,int adminFee)
     {
-        super(id,job,jobseeker,invoiceStatus);
+        super(id,jobs,jobseeker);
         this.adminFee = adminFee;
         
     }
@@ -36,15 +36,12 @@ public class BankPayment extends Invoice
     public void setAdminFee(int adminFee){
        this.adminFee = adminFee;
     }
-    
-    public void setTotalFee(){
-         
-        if (adminFee != 0){
-            super.totalFee = getJob().getFee() - adminFee;
+
+    public void setTotalFee() {
+        //totalFee = getJob().getFee();
+        if (adminFee != 0) {
+            totalFee -= adminFee;
         }
-        else{
-        super.totalFee = getJob().getFee();
-    }
     }
     
     public String toString(){
@@ -55,7 +52,7 @@ public class BankPayment extends Invoice
         strDate = dateFormat.format(date);
         }
         return  "Id = "  + super.getId() +
-                "\nIdJob= "+ super.getJob().getName() +
+                "\nIdJob= "+ super.getJobs()+
                 "\nDate = "+ strDate +
                 "\nSeeker = "+ super.getJobSeeker().getName() +
                 "\nAdmin Fee ="+ adminFee +

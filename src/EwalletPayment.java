@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,16 +12,15 @@ public class EwalletPayment extends Invoice
     /**
      * Constructor for objects of class EwalletPayment
      */
-    public EwalletPayment(int id, Job job,Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
-        super(id,job,jobseeker,invoiceStatus);
+        super(id,jobs,jobseeker);
         
     }
     
-    public EwalletPayment(int id, Job job,Jobseeker jobseeker, 
-    InvoiceStatus invoiceStatus,Bonus bonus)
+    public EwalletPayment(int id, Job job,Jobseeker jobseeker,Bonus bonus)
     {
-        super(id,job,jobseeker,invoiceStatus);
+        super(id,job,jobseeker);
         this.bonus = bonus;
         
     }
@@ -36,58 +36,40 @@ public class EwalletPayment extends Invoice
     public void setBonus(Bonus bonus){
        this.bonus = bonus;
     }
-    
-    public void setTotalFee(){
-        if((bonus != null) && (bonus.getActive() == true) && (getJob().getFee() > getBonus().getMinTotalFee())){
-            super.totalFee = (getJob().getFee() + bonus.getExtraFee());
-        }
-        else{
-            super.totalFee = getJob().getFee();
+
+    public void setTotalFee() {
+        //super.totalFee = getJob().getFee();
+        if (bonus != null && bonus.getActive() &&
+                getTotalFee() > bonus.getMinTotalFee()) {
+            super.totalFee += bonus.getExtraFee();
         }
     }
     
     
     @Override
     public String toString(){
-        String strDate = "" ;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
         Date date = getDate().getTime();
-        if (date != null){
-        strDate = dateFormat.format(date);
+        String strDate = "";
+        if (date != null) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            strDate = dateFormat.format(date);
         }
-        if(getJob().getFee() != totalFee){
-        return  "Id = "  + super.getId() +
-                "\nIdJob= "+ super.getJob().getName() +
-                "\nDate = "+ strDate +
-                "\nSeeker = "+ super.getJobSeeker().getName() +
-                "\nFee ="+ super.totalFee +
-                "\nBonus =" + bonus.getReferralCode() +
-                "\nStatus =" + super.getInvoiceStatus().toString() +
-                "\nPayment Type = " + PAYMENT_TYPE.toString() ;
-            } else{
-        return  "Id = "  + super.getId() +
-                "\nIdJob= "+ super.getJob().getName() +
-                "\nDate = "+ strDate +
-                "\nSeeker = "+ super.getJobSeeker().getName() +
-                "\nFee ="+ super.totalFee +
-                "\nStatus =" + super.getInvoiceStatus().toString() +
-                "\nPayment Type = " + PAYMENT_TYPE.toString(); 
-            }
+        // Print data secara keseluruhan
+        String str =    "====== Ewallet Payment ======" +
+                "\nID           : " + getId() +
+                "\nJobs         : " + getJobs() +
+                "\nDate         : " + strDate +
+                "\nSeeker       : " + getJobSeeker().getName();
+        // Hanya tampilkan referral code kalau bonusnya aktif atau valid
+        if (bonus.getReferralCode() != null &&
+                bonus != null && bonus.getActive() &&
+                getTotalFee() > bonus.getMinTotalFee()) {
+            str += "\nReferral Code: " + bonus.getReferralCode();
+        }
+        str +=          "\nFee          : " + totalFee +
+                "\nStatus       : " + getInvoiceStatus().toString() +
+                "\nPayment Type : " + PAYMENT_TYPE.toString();
+        return str;
     }
-    /**public void printData()
-    {
-        System.out.println("==========Invoice==========");
-        System.out.println("ID               = "+ super.getId());
-        System.out.println("ID Job           = "+ super.getJob().getName());
-        System.out.println("Date             = "+ super.getDate());
-        System.out.println("Seeker           = "+ super.getJobSeeker().getName());
-        System.out.println("Fee              = "+ super.totalFee);
 
-        if(getJob().getFee() != totalFee){
-            System.out.println("Bonus: "+ bonus.getReferralCode());
-        }
-
-        System.out.println("Status           = "+ super.getInvoiceStatus().toString());
-        System.out.println("Payment Type     = "+ PAYMENT_TYPE.toString());
-    }*/
 }

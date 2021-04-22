@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -10,21 +11,20 @@ public abstract class Invoice
 {
     // memasukkan variabel yang digunakan
     private int id;
-    private Job job;
     private Calendar date;
     protected int totalFee;
     private Jobseeker jobSeeker;
-    private PaymentType paymentType;
     private InvoiceStatus invoiceStatus;
+    private ArrayList<Job> jobs;
 
 
-    public Invoice(int id, Job job, 
-    Jobseeker jobSeeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Job> jobs,
+    Jobseeker jobSeeker)
     {
       this.id = id;
-      this.job = job;
+      this.jobs = jobs;
       this.jobSeeker = jobSeeker;
-      this.invoiceStatus = invoiceStatus;
+      this.invoiceStatus = invoiceStatus.OnGoing;
       this.date = Calendar.getInstance();
     }
     
@@ -40,8 +40,8 @@ public abstract class Invoice
      * getter idJob
      * @return idJob
     */  
-    public Job getJob(){
-        return this.job;
+    public  ArrayList<Job> getJobs(){
+        return jobs;
     }
     
     /**
@@ -84,8 +84,8 @@ public abstract class Invoice
     }
     
 
-    public void setId(Job job){
-      this.job = job;
+    public void setJobs(ArrayList<Job> jobs){
+      this.jobs = jobs;
        
     }
     
@@ -111,14 +111,6 @@ public abstract class Invoice
     */
     public void setJobSeeker(Jobseeker jobSeeker){
       this.jobSeeker = jobSeeker;    
-    }
-    
-    public void setPaymentType(PaymentType paymentType){
-      this.paymentType = paymentType;    
-    }
-    
-    public void setInvoiceStatus(InvoiceStatus invoiceStatus){
-      this.invoiceStatus = invoiceStatus;    
     }
 
     public abstract String toString();
