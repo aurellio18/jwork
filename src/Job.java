@@ -19,14 +19,15 @@ public class Job
      * @param category
      * @param recruiter
      */
-    public Job(int id,String name, int fee,
-    Recruiter recruiter, JobCategory category)
+    public Job(int id,String name,Recruiter recruiter, int fee,
+     JobCategory category)
     {
       this.id = id;
       this.name = name;
+      this.recruiter = recruiter;
       this.fee = fee;
       this.category = category;
-      this.recruiter = recruiter;
+
     }
     
     /**

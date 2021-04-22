@@ -8,7 +8,7 @@ public class DatabaseJob
 {
 
     // memasukkan variabel yang digunakan
-    private static ArrayList<Job> JOB_DATABASE;
+    private static ArrayList<Job> JOB_DATABASE= new ArrayList<Job>();
     private static int lastId;
 
     public static ArrayList<Job> getJobDatabase(){

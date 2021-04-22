@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class DatabaseBonus
 {
     // memasukkan variabel yang digunakan
-    private static ArrayList<Bonus> BONUS_DATABASE;
+    private static ArrayList<Bonus> BONUS_DATABASE= new ArrayList<Bonus>();
     private static int lastId;
 
     public static ArrayList<Bonus> getBonusDatabase(){

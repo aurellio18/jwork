@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Calendar;
 
@@ -8,57 +9,47 @@ import java.util.Calendar;
 
 public class JWork
 {
-    public static void main (String[] args) 
-    {
-        Location loc1 = new Location("Bandung", "Bandung", "Bandung");
-        DatabaseRecruiter.addRecruiter( new Recruiter(1, "Aurellio", "aurelliofishandy@yahoo.com", "0812883728", loc1));
-        DatabaseRecruiter.addRecruiter( new Recruiter(2, "Aurellio", "aurelliofishandy@yahoo.com", "0812883728", loc1));
-        DatabaseRecruiter.addRecruiter( new Recruiter(3, "ferlinda", "ferlinda@gmail.com", "0812883728", loc1));
+    public static void main(String[] args){
 
-        DatabaseJobseeker.addJobseeker(new Jobseeker(1, "Arel", "aurellio@gmail.com", "aaa123",new GregorianCalendar(2021, 4, 8));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(1, "Arel", "aurellio@gmail.com", "aaa123",new GregorianCalendar(2021, 4, 8));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(1, "ferlinda", "ferlinda@gmail.com", "aaa123",new GregorianCalendar(2021, 4, 8));
-        DatabaseJob.addJob(new Job(1, "Designer", DatabaseRecruiter.getRecruiterById(1), 10, JobCategory.WebDeveloper));
-        DatabaseJob.addJob(new Job(1, "Designer", DatabaseRecruiter.getRecruiterById(1), 10, JobCategory.WebDeveloper));
-        DatabaseJob.addJob(new Job(1, "Designer", DatabaseRecruiter.getRecruiterById(1), 10, JobCategory.DataAnalyst));
+        Calendar cal = new GregorianCalendar(2021, 4, 20);
+        Location location = new Location("Jakarta", "Jakarta", "mantap");
+        {
+            Recruiter recruiter = new Recruiter(1, "Arel", "arel@ui.ac.id", "0123456237", location);
+            DatabaseRecruiter.addRecruiter(recruiter);
+        }
 
-        //Recruiter recruite1 = new Recruiter(1, "Aurellio", "aurelliofishandy@yahoo.com", "0812883728", location1);
-        //Jobseeker jobSeek1 = new Jobseeker(1 ,"tayo", "tayo@gmail.com", "abcd1234", "10 Maret 2021");
-        Bonus bonus1 = new Bonus(1, "astagfirullah", 100, 10, true);
-        Bonus bonus2 = new Bonus(2, null, 200, 20, true);
-        Job job1 = new Job(1, "Designer",10000, recruite1, JobCategory.UI);
-        Job job2 = new Job(2, "Programmer",10000, recruite1, JobCategory.WebDeveloper);
-        /**EwalletPayment ewalletpayment2 = new EwalletPayment(2, job1, "3 September 2020", jobSeek1,  InvoiceStatus.Finished, bonus1);
-        EwalletPayment ewalletpayment3 = new EwalletPayment(3, job2, "4 September 2020", jobSeek1,  InvoiceStatus.Finished, bonus1); */
-                
-        Jobseeker jobseeker1 = new Jobseeker(1, "Arel", ".aurellio@gmail.com", "aaa123",new GregorianCalendar(2021, 4, 8));
-        BankPayment bank1 = new BankPayment(1, job1, jobseeker1 ,  InvoiceStatus.Finished);
-        EwalletPayment ewalletpayment1 = new EwalletPayment(1, job1, jobseeker1 ,  InvoiceStatus.Finished, bonus2);
-        
-        //BankPayment bank2 = new BankPayment(1, job1, "2 September 2020", jobSeek1,  InvoiceStatus.Finished, 100);
 
-        //Jobseeker jobseeker2 = new Jobseeker(2, "Arel", "aurellio@gmail.com", "Hai123", 2021, 1, 1);
-        //Jobseeker jobseeker3 = new Jobseeker(3, "Arel", "aurellio@gmail.com", "hai123");
-        
-        /*jobseeker1.toString();
-        System.out.println(jobseeker1.toString());
-        jobseeker2.toString();
-        System.out.println(jobseeker2.toString());
+        Jobseeker jobseeker1 = new Jobseeker(1, "Arel", "arel@gmail.com", "Hedsot123mantap", cal);
+        Jobseeker jobseeker2 = new Jobseeker(2, "Arel", "arel@gmail.com", "Hedsot123mantap", 2020, 11, 2);
+        Jobseeker jobseeker3 = new Jobseeker(3, "Ferlinda", "ferlinda@gmail.com", "Testes123", 2020, 4, 20);
+        DatabaseJobseeker.addJobseeker(jobseeker1);
+        DatabaseJobseeker.addJobseeker(jobseeker2);
+        DatabaseJobseeker.addJobseeker(jobseeker3);
 
-        jobseeker3.toString();
-        System.out.println(jobseeker3.toString());
+        {
+            ArrayList<Jobseeker> jstest = DatabaseJobseeker.getDatabaseJobseeker();
+            for (Jobseeker js : jstest)
+                System.out.println(js.toString());
+        }
 
-        jobseeker1.setEmail("aurellio@gmail.com");
-        jobseeker1.setPassword("AAh123");
-        System.out.println(jobseeker1.toString());*/
-        
-        Calendar c1 = new GregorianCalendar();
-        bank1.setDate(c1);
-        ewalletpayment1.setDate(c1);
-        bank1.toString();
-        System.out.println(bank1.toString());
-        ewalletpayment1.toString();
-        System.out.println(ewalletpayment1.toString());
+        Job job1 = new Job(1, "Duelist", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UX);
+        Job job2 = new Job(2, "Controller", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.WebDeveloper);
+        Job job3 = new Job(3, "AREL", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.UX);
+        DatabaseJob.addJob(job1);
+        DatabaseJob.addJob(job2);
+        DatabaseJob.addJob(job3);
+
+        {
+            ArrayList<Job> jobtest = DatabaseJob.getJobByCategory(JobCategory.UX);
+            for (Job j: jobtest)
+                System.out.println(j.toString());
+        }
+        //EwalletPayment ewalletpay = new EwalletPayment(4, job, jobseeker1, InvoiceStatus.Finished);
+        // BankPayment bankPay = new BankPayment(5, job, jobseeker1, InvoiceStatus.Finished);
+
+        //System.out.println(ewalletpay);
+        //System.out.println(bankPay);
+
     }
 }
 

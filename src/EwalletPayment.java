@@ -18,9 +18,9 @@ public class EwalletPayment extends Invoice
         
     }
     
-    public EwalletPayment(int id, Job job,Jobseeker jobseeker,Bonus bonus)
+    public EwalletPayment(int id, ArrayList<Job> jobs,Jobseeker jobseeker,Bonus bonus)
     {
-        super(id,job,jobseeker);
+        super(id,jobs,jobseeker);
         this.bonus = bonus;
         
     }

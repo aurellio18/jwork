@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class DatabaseJobseeker
 {
     // memasukkan variabel yang digunakan
-    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE;
+    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE= new ArrayList<Jobseeker>();
     private static int lastId;
 
     public static ArrayList<Jobseeker> getDatabaseJobseeker(){
