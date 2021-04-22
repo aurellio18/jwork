@@ -17,14 +17,7 @@ public abstract class Invoice
     private PaymentType paymentType;
     private InvoiceStatus invoiceStatus;
 
-    /**
-     * Constructor untuk objek
-     * @param id
-     * @param idJob
-     * @param date
-     * @param totalFee
-     * @param JobSeeker
-     */
+
     public Invoice(int id, Job job, 
     Jobseeker jobSeeker, InvoiceStatus invoiceStatus)
     {
@@ -32,6 +25,7 @@ public abstract class Invoice
       this.job = job;
       this.jobSeeker = jobSeeker;
       this.invoiceStatus = invoiceStatus;
+      this.date = Calendar.getInstance();
     }
     
     /**
@@ -89,10 +83,7 @@ public abstract class Invoice
       
     }
     
-    /**
-     * setter idJob
-     * @param idJob
-    */
+
     public void setId(Job job){
       this.job = job;
        
@@ -111,10 +102,7 @@ public abstract class Invoice
         this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
-    /**
-     * setter totalFee
-     * @param totalFee
-    */
+
     public abstract void setTotalFee();
     
     /**

@@ -29,13 +29,14 @@ public class JWork
         //Jobseeker jobseeker2 = new Jobseeker(2, "Arel", "aurellio@gmail.com", "Hai123", 2021, 1, 1);
         //Jobseeker jobseeker3 = new Jobseeker(3, "Arel", "aurellio@gmail.com", "hai123");
         
-        /**jobseeker1.toString();
+        /*jobseeker1.toString();
         System.out.println(jobseeker1.toString());
         jobseeker2.toString();
         System.out.println(jobseeker2.toString());
+
         jobseeker3.toString();
         System.out.println(jobseeker3.toString());
-        
+
         jobseeker1.setEmail("aurellio@gmail.com");
         jobseeker1.setPassword("AAh123");
         System.out.println(jobseeker1.toString());*/

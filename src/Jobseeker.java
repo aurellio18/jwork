@@ -31,9 +31,11 @@ public class Jobseeker
                     String password, Calendar joinDate) {
         this.id = id;
         this.name = name;
-        this.setEmail(email);
-        this.setPassword(password);
+        this.email = email;
+        this.password = password;
         this.joinDate = joinDate;
+        setEmail(email);
+        setPassword(password);
     }
     
     public Jobseeker(int id, String name, String email,
@@ -115,7 +117,7 @@ public class Jobseeker
      * @param email
     */
     public void setEmail(String email){
-        Pattern p = Pattern.compile("^(?!.*([.])\1)[^-.][a-zA-Z0-9.&*_~]+@[^-. ][a-zA-Z0-9-.&*_~]+(?:\\.[a-zA-Z0-9-]+)*");
+        Pattern p = Pattern.compile("^(?!.*([.])\\1)[^-.@][a-zA-Z0-9.&*_~]+(?!.*([@.])\\1)[^-.][a-zA-Z0-9-.&*_~]+(?:\\\\.[a-zA-Z0-9-]+)*$");
         Matcher m = p.matcher(email);
         if (m.find()){
             this.email = email;
@@ -143,6 +145,7 @@ public class Jobseeker
      * @param joinDate
     */
     public void setJoinDate(Calendar joinDate){
+
         this.joinDate = joinDate;
     }
     
@@ -152,7 +155,7 @@ public class Jobseeker
     
     public String toString(){
         String strDate = "" ;
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
         if (joinDate != null){
         Date date = joinDate.getTime();
         strDate = dateFormat.format(date);

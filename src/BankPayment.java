@@ -49,7 +49,7 @@ public class BankPayment extends Invoice
     
     public String toString(){
         String strDate = "" ;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
         Date date = getDate().getTime();
         if (date != null){
         strDate = dateFormat.format(date);
