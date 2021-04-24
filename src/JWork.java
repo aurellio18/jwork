@@ -50,6 +50,16 @@ public class JWork
         //System.out.println(ewalletpay);
         //System.out.println(bankPay);
 
+        Bonus bonus1 = new Bonus(1,"ko123",10,1,false);
+        Bonus bonus2 = new Bonus(2,"ko123",20,1,true);
+        DatabaseBonus.addBonus(bonus1);
+        DatabaseBonus.addBonus(bonus2);
+        {
+            ArrayList<Bonus> bonuses = DatabaseBonus.getBonusDatabase();
+            for (Bonus bns : bonuses)
+                System.out.println(bns.toString());
+        }
+
     }
 }
 

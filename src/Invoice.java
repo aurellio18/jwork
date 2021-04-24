@@ -24,7 +24,7 @@ public abstract class Invoice
       this.id = id;
       this.jobs = jobs;
       this.jobSeeker = jobSeeker;
-      this.invoiceStatus = invoiceStatus.OnGoing;
+      this.invoiceStatus = invoiceStatus;
       this.date = Calendar.getInstance();
     }
     
@@ -112,6 +112,8 @@ public abstract class Invoice
     public void setJobSeeker(Jobseeker jobSeeker){
       this.jobSeeker = jobSeeker;    
     }
+
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus){this.invoiceStatus = invoiceStatus;}
 
     public abstract String toString();
     //Print out dari data yang diinput
