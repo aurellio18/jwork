@@ -9,7 +9,7 @@ public class DatabaseJob
 
     // memasukkan variabel yang digunakan
     private static ArrayList<Job> JOB_DATABASE= new ArrayList<Job>();
-    private static int lastId;
+    private static int lastId = 0;
 
     public static ArrayList<Job> getJobDatabase(){
         return JOB_DATABASE;
@@ -18,13 +18,21 @@ public class DatabaseJob
     public static int getLastId(){
         return lastId;
     }
-    public static Job getJobById(int id){
-        for (int i = 0; i < JOB_DATABASE.size(); i++){
-            if(JOB_DATABASE.get(i).getId() == id){
-                return JOB_DATABASE.get(i);
+
+    public static Job getJobById(int id) throws JobNotFoundException{
+        Job temp = null;
+        try {
+            for (Job job : JOB_DATABASE) {
+                if (id == job.getId()) {
+                    temp = job;
+                }
             }
         }
-        return null;
+        catch (Exception x)
+        {
+            throw new JobNotFoundException(id);
+        }
+        return temp;
     }
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
@@ -55,14 +63,21 @@ public class DatabaseJob
         return true;
     }
     
-    public static boolean removeJob(int id){
-        for (int i = 0; i < JOB_DATABASE.size(); i++){
-            if (JOB_DATABASE.get(i).getId() == id){
-                JOB_DATABASE.remove(i);
-                return true;
+    public static boolean removeJob(int id) throws JobNotFoundException {
+        boolean temp = true;
+        try
+        {
+        for (Job job : JOB_DATABASE){
+            if (id == job.getId()){
+                JOB_DATABASE.remove(id);
+                temp = true;
             }
         }
-        return false;
+    }
+        catch (Exception x){
+            throw new JobNotFoundException(id);
+        }
+        return temp;
     }
     
 

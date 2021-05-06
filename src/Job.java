@@ -111,12 +111,13 @@ public class Job
     }
     
     public String toString(){
-        return  "Id = "  + id  +
-                "Name = "+ name +
-                "Recruiter = "+ getRecruiter().getName() +
-                "City = "+ recruiter.getLocation().getCity() +
-                "Fee = "+ fee +
-                "Category ="+ category ;
+        return  "========= JOB =========" +
+                "\nId = "  + id  +
+                "\nName = "+ name +
+                "\nRecruiter = "+ getRecruiter().getName() +
+                "\nCity = "+ recruiter.getLocation().getCity() +
+                "\nFee = "+ fee +
+                "\nCategory ="+ category ;
     }
     
     /**

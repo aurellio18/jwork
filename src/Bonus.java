@@ -21,7 +21,7 @@ public class Bonus
       
     }
     
-    public int getId(){
+    public  int getId(){
         return this.id;
     }
     
@@ -68,11 +68,12 @@ public class Bonus
     }
     
     public String toString(){
-        return  "Id = "  + id +
-                "Referral Code = "+ referralCode +
-                "Extra Fee = "+ extraFee +
-                "Min Total Fee =" + minTotalFee +
-                "Active Status =" + active ;
+        return  "========= Bonus =========" +
+                "\nId = "  + id +
+                "\nReferral Code = "+ referralCode +
+                "\nExtra Fee = "+ extraFee +
+                "\nMin Total Fee =" + minTotalFee +
+                "\nActive Status =" + active ;
     }
     
     /**

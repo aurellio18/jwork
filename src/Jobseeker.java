@@ -160,7 +160,8 @@ public class Jobseeker
         Date date = joinDate.getTime();
         strDate = dateFormat.format(date);
         }
-        return  "Id = "  + id  +
+        return  "========= JOB SEEKER =========" +
+                "\nId = "  + id  +
                 "\nName = "+ name +
                 "\nEmail = "+ email +
                 "\nPassword = "+ password +

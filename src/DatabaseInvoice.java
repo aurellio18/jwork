@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
-    private static int lastId;
+    private static int lastId = 0;
 
     public static ArrayList<Invoice> getInvoiceDatabase(){
         return INVOICE_DATABASE;
