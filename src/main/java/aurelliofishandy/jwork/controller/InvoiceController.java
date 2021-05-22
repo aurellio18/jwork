@@ -55,7 +55,7 @@ public class InvoiceController {
         ArrayList<Job> job = new ArrayList<>();
         for (int jb : jobIdList) {
             try {
-                job.add(DatabaseJob.getJobById(jb);
+                job.add(DatabaseJob.getJobById(jb));
             } catch (JobNotFoundException e) {
                 System.out.println(e.getMessage());
             }
