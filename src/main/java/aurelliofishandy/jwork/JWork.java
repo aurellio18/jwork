@@ -10,9 +10,13 @@ public class JWork {
         Location l2= new Location("Jawa Tengah", "Semarang", "Bismillah");
         Location l3= new Location("Jawa Timur", "Surabaya", "Bismillah");
 
-        DatabaseRecruiter.addRecruiter(new Recruiter(1,"aurellio","aurelliofishandy@gmail.com","081284475450",l1));
-        DatabaseRecruiter.addRecruiter(new Recruiter(2,"fishandy","fishandy@gmail.com","081284475020",l2));
-        DatabaseRecruiter.addRecruiter(new Recruiter(3,"hartadi","hartadi@gmail.com","081284205450",l3));
+        Recruiter r1 = new Recruiter(1,"aurellio","aurelliofishandy@gmail.com","081284475450",l1);
+        Recruiter r2 = new Recruiter(2,"fishandy","fishandy@gmail.com","081284475020",l2);
+        Recruiter r3 = new Recruiter(3,"hartadi","hartadi@gmail.com","081284205450",l3);
+
+        DatabaseRecruiter.addRecruiter(r1);
+        DatabaseRecruiter.addRecruiter(r2);
+        DatabaseRecruiter.addRecruiter(r3);
 
         try{
             DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Polisi",DatabaseRecruiter.getRecruiterById(1),900000,JobCategory.DataAnalyst));

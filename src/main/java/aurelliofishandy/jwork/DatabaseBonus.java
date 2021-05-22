@@ -34,7 +34,7 @@ public class DatabaseBonus
         }
         return temp;
     }
-    public static Bonus getBonusByReferralCode(String referralCode){
+    public static Bonus getBonusByReferralCode(Bonus referralCode){
         ArrayList<Job> temp = new ArrayList<>();
         for (int i=0; i < BONUS_DATABASE.size(); i++) {
             if(BONUS_DATABASE.get(i).getReferralCode()== referralCode){
