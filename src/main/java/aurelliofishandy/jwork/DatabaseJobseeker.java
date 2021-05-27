@@ -67,7 +67,7 @@ public class DatabaseJobseeker
     public static Jobseeker getJobSeekerLogin(String email, String password){
         Jobseeker x = null;
         for (Jobseeker js : JOBSEEKER_DATABASE) {
-            if (email == js.getEmail() && password == js.getPassword())
+            if (email.equals(js.getEmail()) && password.equals(js.getPassword()))
             {
                 x = js;
             }

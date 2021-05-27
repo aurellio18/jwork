@@ -34,10 +34,10 @@ public class DatabaseBonus
         }
         return temp;
     }
-    public static Bonus getBonusByReferralCode(Bonus referralCode){
+    public static Bonus getBonusByReferralCode(String referralCode){
         ArrayList<Job> temp = new ArrayList<>();
         for (int i=0; i < BONUS_DATABASE.size(); i++) {
-            if(BONUS_DATABASE.get(i).getReferralCode()== referralCode){
+            if(BONUS_DATABASE.get(i).getReferralCode() .equals(referralCode) ){
                 return BONUS_DATABASE.get(i);
             }
         }
