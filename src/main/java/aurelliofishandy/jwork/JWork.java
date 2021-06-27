@@ -14,6 +14,13 @@ public class JWork {
         Recruiter r2 = new Recruiter(2,"fishandy","fishandy@gmail.com","081284475020",l2);
         Recruiter r3 = new Recruiter(3,"hartadi","hartadi@gmail.com","081284205450",l3);
 
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(1, "Aurellio", "arelfish@gmail.com", "Password123"));
+        } catch (EmailAlreadyExistsException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+
         DatabaseRecruiter.addRecruiter(r1);
         DatabaseRecruiter.addRecruiter(r2);
         DatabaseRecruiter.addRecruiter(r3);
@@ -41,6 +48,7 @@ public class JWork {
         }catch(RecruiterNotFoundException e){
             System.out.println(e.getMessage());
         }
+
 
 
         SpringApplication.run(JWork.class, args);
