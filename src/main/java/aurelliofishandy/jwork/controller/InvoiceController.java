@@ -42,7 +42,7 @@ public class InvoiceController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public Boolean removeInvoice(@RequestParam(value = "id") int id){
+    public Boolean removeInvoice(@PathVariable int id){
         try{
             DatabaseInvoice.removeInvoice(id);
         } catch (InvoiceNotFoundException e){

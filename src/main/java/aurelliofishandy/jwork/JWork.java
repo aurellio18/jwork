@@ -30,7 +30,7 @@ public static void main(String[] args) {
         }catch(RecruiterNotFoundException e){
             System.out.println(e.getMessage());
         }
-SpringApplication.run(JWork.class, args);
+        SpringApplication.run(JWork.class, args);
 
 }
 

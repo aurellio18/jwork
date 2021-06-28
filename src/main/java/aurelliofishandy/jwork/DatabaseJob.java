@@ -21,19 +21,12 @@ public class DatabaseJob
     }
 
     public static Job getJobById(int id) throws JobNotFoundException{
-        Job temp = null;
-        try {
-            for (Job job : JOB_DATABASE) {
-                if (id == job.getId()) {
-                    temp = job;
-                }
+        for (Job job : JOB_DATABASE) {
+            if (id == job.getId()) {
+                return job;
             }
         }
-        catch (Exception x)
-        {
-            throw new JobNotFoundException(id);
-        }
-        return temp;
+        throw new JobNotFoundException(id);
     }
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
