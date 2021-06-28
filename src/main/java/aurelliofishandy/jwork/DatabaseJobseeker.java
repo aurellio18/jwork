@@ -19,20 +19,11 @@ public class DatabaseJobseeker
         return lastId;
     }
 
-    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException{
-        Jobseeker temp = null;
-        try {
-            for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
-                if (id == jobseeker.getId()) {
-                    temp = jobseeker;
-                }
-            }
-        }
-        catch (Exception x)
-        {
-            throw new JobSeekerNotFoundException(id);
-        }
-        return temp;
+    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
+        for (Jobseeker js : JOBSEEKER_DATABASE)
+            if (id == js.getId())
+                return js;
+        throw new JobSeekerNotFoundException(id);
     }
 
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {

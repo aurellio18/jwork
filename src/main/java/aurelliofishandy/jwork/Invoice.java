@@ -25,7 +25,7 @@ public abstract class Invoice
       this.id = id;
       this.jobs = jobs;
       this.jobSeeker = jobSeeker;
-      this.invoiceStatus = invoiceStatus;
+      this.invoiceStatus = invoiceStatus.OnGoing;
       this.date = Calendar.getInstance();
     }
     

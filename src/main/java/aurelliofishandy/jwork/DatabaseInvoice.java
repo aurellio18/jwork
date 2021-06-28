@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
-    private static int lastId = 0;
+    private static int lastId;
 
     public static ArrayList<Invoice> getInvoiceDatabase(){
         return INVOICE_DATABASE;
@@ -13,20 +13,23 @@ public class DatabaseInvoice {
         return lastId;
     }
 
-    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException {
-        Invoice temp = null;
-        try {
-            for (Invoice invoice : INVOICE_DATABASE) {
-                if (id == invoice.getId()) {
-                    temp = invoice;
+    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException{
+        Invoice val = null;
+        try
+        {
+            for (Invoice invc : INVOICE_DATABASE)
+            {
+                if (id == invc.getId())
+                {
+                    val = invc;
                 }
             }
         }
-        catch (Exception x)
+        catch (Exception error)
         {
             throw new InvoiceNotFoundException(id);
         }
-        return temp;
+        return val;
     }
 
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
@@ -34,16 +37,16 @@ public class DatabaseInvoice {
         for (int i=0; i < INVOICE_DATABASE.size(); i++) {
             if(INVOICE_DATABASE.get(i).getJobSeeker().getId() == jobseekerId){
                 temp.add(INVOICE_DATABASE.get(i));
-                return temp;
             }
         }
-        return null;
+        return temp.isEmpty() ? null : temp;
     }
 
-    public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException {
-        for (Invoice invoce : INVOICE_DATABASE)
+    public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{
+        for (Invoice invc : INVOICE_DATABASE)
         {
-            if (invoce.getId() == invoice.getId()) {
+            if ((invc.getInvoiceStatus() == (InvoiceStatus.OnGoing)))
+            {
                 throw new OngoingInvoiceAlreadyExistsException(invoice);
             }
         }
@@ -62,21 +65,16 @@ public class DatabaseInvoice {
         return false;
     }
 
-    public static boolean removeInvoice(int id) throws InvoiceNotFoundException {
-        boolean temp = true;
-        try
+    public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
+        for (Invoice invc : INVOICE_DATABASE)
         {
-            for (Invoice invoice : INVOICE_DATABASE){
-                if (id == invoice.getId()){
-                    INVOICE_DATABASE.remove(id);
-                    temp = true;
-                }
+            if (invc.getId() == id)
+            {
+                INVOICE_DATABASE.remove(invc);
+                return true;
             }
         }
-        catch (Exception x){
-            throw new InvoiceNotFoundException(id);
-        }
-        return temp;
+        throw new InvoiceNotFoundException(id);
     }
 
 }

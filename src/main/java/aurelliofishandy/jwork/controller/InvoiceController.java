@@ -1,15 +1,13 @@
 package aurelliofishandy.jwork.controller;
 
-import aurelliofishandy.jwork.*;
-import jdk.jfr.Category;
-import org.springframework.web.bind.annotation.*;
-import java.lang.reflect.Array;
+import aurelliofishandy.jwork.*;import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
+import java.util.prefs.BackingStoreException;
 
 @RequestMapping("/invoice")
 @RestController
 public class InvoiceController {
-
     @RequestMapping("")
     public ArrayList<Invoice> getAllInvoice(){
         return DatabaseInvoice.getInvoiceDatabase();
@@ -17,27 +15,33 @@ public class InvoiceController {
 
     @RequestMapping("/{id}")
     public Invoice getInvoiceById(@PathVariable int id) {
-        Invoice invoice = null;
+        Invoice invc = null;
         try {
-            invoice = DatabaseInvoice.getInvoiceById(id);
+            invc = DatabaseInvoice.getInvoiceById(id);
         } catch (InvoiceNotFoundException e) {
             e.getMessage();
             return null;
         }
-        return invoice;
+        return invc;
     }
 
-    @RequestMapping("/Jobseeker/{JobseekerId}")
-    public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId){
-        return DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
+    @RequestMapping(value = "/jobseeker/{jobseekerId}", method = RequestMethod.GET)
+    public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
+        ArrayList<Invoice> invc = null;
+        invc = DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
+        return invc;
     }
 
-   /*@RequestMapping("/invoiceStatus/{id}")
-    public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId){
-        return DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
-    } */
+    @RequestMapping(value = "/InvoiceStatus", method = RequestMethod.PUT)
+    public Invoice changeInvoiceStatus(@RequestParam(value="id") int id,
+                                       @RequestParam(value="invoiceStatus") InvoiceStatus invoiceStatus)
+            throws InvoiceNotFoundException {
+        DatabaseInvoice.changeInvoiceStatus(id, invoiceStatus);
+        Invoice invc = DatabaseInvoice.getInvoiceById(id);
+        return invc;
+    }
 
-    @RequestMapping(value = "/invoice/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Boolean removeInvoice(@RequestParam(value = "id") int id){
         try{
             DatabaseInvoice.removeInvoice(id);
@@ -47,11 +51,10 @@ public class InvoiceController {
         }
         return true;
     }
-
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
-                                  @RequestParam(value = "adminId") int adminFee){
+                                  @RequestParam(value = "adminFee") int adminFee){
         ArrayList<Job> job = new ArrayList<>();
         for (int jb : jobIdList) {
             try {
@@ -61,12 +64,12 @@ public class InvoiceController {
             }
         }
         try {
-            Invoice invoice = new BankPayment(DatabaseInvoice.getLastId()+1, job,
+            BankPayment invoice = new BankPayment(DatabaseInvoice.getLastId()+1, job,
                     DatabaseJobseeker.getJobseekerById(jobseekerId), adminFee);
-            DatabaseInvoice.addInvoice(invoice);
             invoice.setTotalFee();
+            DatabaseInvoice.addInvoice(invoice);
             return invoice;
-        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
@@ -85,21 +88,15 @@ public class InvoiceController {
             }
         }
         try {
-            Invoice invoice = new EwalletPayment(DatabaseInvoice.getLastId()+1, job,DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
-            DatabaseInvoice.addInvoice(invoice);
+            EwalletPayment invoice = new EwalletPayment(DatabaseInvoice.getLastId()+1, job,
+                    DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
             invoice.setTotalFee();
+            DatabaseInvoice.addInvoice(invoice);
             return invoice;
-        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
 
 }
-
-
-
-
-
-
-
