@@ -1,4 +1,10 @@
 package aurelliofishandy.jwork;
+
+/**
+* @author (Aurellio Fishandy)
+* @version (TUTAM - 29-Jun-2021)
+*/
+
 public class OngoingInvoiceAlreadyExistsException extends Exception {
     private Invoice invoice_error;
 
@@ -8,6 +14,10 @@ public class OngoingInvoiceAlreadyExistsException extends Exception {
 
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String getMessage(){
         return super.getMessage() + invoice_error.getInvoiceStatus() + "already exists.";

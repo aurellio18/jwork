@@ -5,14 +5,28 @@ import aurelliofishandy.jwork.*;import org.springframework.web.bind.annotation.*
 import java.util.ArrayList;
 import java.util.prefs.BackingStoreException;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 29-Jun-2021)
+*/
+
 @RequestMapping("/invoice")
 @RestController
 public class InvoiceController {
+    
+    /** 
+     * @return ArrayList<Invoice>
+     */
     @RequestMapping("")
     public ArrayList<Invoice> getAllInvoice(){
         return DatabaseInvoice.getInvoiceDatabase();
     }
 
+    
+    /** 
+     * @param id
+     * @return Invoice
+     */
     @RequestMapping("/{id}")
     public Invoice getInvoiceById(@PathVariable int id) {
         Invoice invc = null;
@@ -25,6 +39,11 @@ public class InvoiceController {
         return invc;
     }
 
+    
+    /** 
+     * @param jobseekerId
+     * @return ArrayList<Invoice>
+     */
     @RequestMapping(value = "/jobseeker/{jobseekerId}", method = RequestMethod.GET)
     public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
         ArrayList<Invoice> invc = null;
@@ -32,6 +51,12 @@ public class InvoiceController {
         return invc;
     }
 
+    
+    /** 
+     * @param @RequestParam(value="id"
+     * @return Invoice
+     * @throws InvoiceNotFoundException
+     */
     @RequestMapping(value = "/InvoiceStatus", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@RequestParam(value="id") int id,
                                        @RequestParam(value="invoiceStatus") InvoiceStatus invoiceStatus)
@@ -41,6 +66,11 @@ public class InvoiceController {
         return invc;
     }
 
+    
+    /** 
+     * @param id
+     * @return Boolean
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Boolean removeInvoice(@PathVariable int id){
         try{
@@ -51,6 +81,11 @@ public class InvoiceController {
         }
         return true;
     }
+    
+    /** 
+     * @param "jobIdList"
+     * @return Invoice
+     */
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
@@ -65,7 +100,7 @@ public class InvoiceController {
         }
         try {
             BankPayment invoice = new BankPayment(DatabaseInvoice.getLastId()+1, job,
-                    DatabaseJobseeker.getJobseekerById(jobseekerId), adminFee);
+                    DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), adminFee);
             invoice.setTotalFee();
             DatabaseInvoice.addInvoice(invoice);
             return invoice;
@@ -75,6 +110,11 @@ public class InvoiceController {
         }
     }
 
+    
+    /** 
+     * @param "jobIdList"
+     * @return Invoice
+     */
     @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                      @RequestParam(value = "jobseekerId") int jobseekerId,
@@ -89,7 +129,7 @@ public class InvoiceController {
         }
         try {
             EwalletPayment invoice = new EwalletPayment(DatabaseInvoice.getLastId()+1, job,
-                    DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
+                    DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
             invoice.setTotalFee();
             DatabaseInvoice.addInvoice(invoice);
             return invoice;

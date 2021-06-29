@@ -1,4 +1,10 @@
 package aurelliofishandy.jwork;
+
+/**
+* @author (Aurellio Fishandy)
+* @version (TUTAM - 29-Jun-2021)
+*/
+
 public enum JobCategory
 {
     WebDeveloper("Web Developer"),

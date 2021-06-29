@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (TUTAM - 29-Jun-2021)
 */
 public class DatabaseJobseeker
 {
@@ -11,14 +11,28 @@ public class DatabaseJobseeker
     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE= new ArrayList<Jobseeker>();
     private static int lastId = 0;
 
+    
+    /** 
+     * @return ArrayList<Jobseeker>
+     */
     public static ArrayList<Jobseeker> getDatabaseJobseeker(){
         return JOBSEEKER_DATABASE;
     }
 
+    
+    /** 
+     * @return int
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    
+    /** 
+     * @param id
+     * @return Jobseeker
+     * @throws JobSeekerNotFoundException
+     */
     public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
         for (Jobseeker js : JOBSEEKER_DATABASE)
             if (id == js.getId())
@@ -26,6 +40,12 @@ public class DatabaseJobseeker
         throw new JobSeekerNotFoundException(id);
     }
 
+    
+    /** 
+     * @param jobseeker
+     * @return boolean
+     * @throws EmailAlreadyExistsException
+     */
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
         for (Jobseeker js : JOBSEEKER_DATABASE)
         {
@@ -38,6 +58,12 @@ public class DatabaseJobseeker
         return true;
     }
     
+    
+    /** 
+     * @param id
+     * @return boolean
+     * @throws JobSeekerNotFoundException
+     */
     public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException {
         boolean temp = true;
         try
@@ -55,6 +81,12 @@ public class DatabaseJobseeker
         return temp;
     }
 
+    
+    /** 
+     * @param email
+     * @param password
+     * @return Jobseeker
+     */
     public static Jobseeker getJobSeekerLogin(String email, String password){
         Jobseeker x = null;
         for (Jobseeker js : JOBSEEKER_DATABASE) {

@@ -1,7 +1,7 @@
 package aurelliofishandy.jwork;
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (TUTAM - 29-Jun-2021)
 */
 
 public class Job
@@ -64,6 +64,10 @@ public class Job
         return this.recruiter;
     }
     
+    
+    /** 
+     * @return JobCategory
+     */
     public JobCategory getCategory(){
         return this.category;
     }
@@ -111,6 +115,10 @@ public class Job
       this.category = category;   
     }
     
+    
+    /** 
+     * @return String
+     */
     public String toString(){
         return  "========= JOB =========" +
                 "\nId = "  + id  +

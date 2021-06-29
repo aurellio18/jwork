@@ -6,14 +6,28 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 29-Jun-2021)
+*/
+
 @RequestMapping("/recruiter")
 @RestController
 public class RecruiterController {
+    
+    /** 
+     * @return ArrayList<Recruiter>
+     */
     @RequestMapping("")
     public ArrayList<Recruiter> getAllRecruiter(){
         return DatabaseRecruiter.getRecruiterDatabase();
     }
 
+    
+    /** 
+     * @param id
+     * @return Recruiter
+     */
     @RequestMapping("/{id}")
     public Recruiter getRecruiterById(@PathVariable int id) {
         Recruiter recruiter = null;
@@ -26,6 +40,11 @@ public class RecruiterController {
         return recruiter;
     }
 
+    
+    /** 
+     * @param @RequestParam(value="name"
+     * @return Recruiter
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Recruiter addRecruiter(@RequestParam(value="name") String name,
                                   @RequestParam(value="email") String email,

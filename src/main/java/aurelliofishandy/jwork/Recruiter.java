@@ -1,8 +1,10 @@
+package aurelliofishandy.jwork;
+
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (TUTAM - 29-Jun-2021)
 */
-package aurelliofishandy.jwork;
+
 public class Recruiter
 {
     // memasukkan variabel yang diperlukan
@@ -113,6 +115,10 @@ public class Recruiter
       this.location = location;    
     }
     
+    
+    /** 
+     * @return String
+     */
     public String toString(){
         return  "Id = "  + id  +
                 "Name = "+ name +

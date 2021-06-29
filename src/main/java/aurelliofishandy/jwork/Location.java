@@ -1,8 +1,8 @@
+package aurelliofishandy.jwork;
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (TUTAM - 29-Jun-2021)
 */
-package aurelliofishandy.jwork;
 public class Location
 {
     // memasukkan variabel yang diperlukan
@@ -76,6 +76,10 @@ public class Location
          
     }
     
+    
+    /** 
+     * @return String
+     */
     public String toString(){
         return  "Province = "  + province  +
                 "City = "+ city +

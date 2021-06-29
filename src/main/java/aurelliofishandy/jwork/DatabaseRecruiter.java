@@ -4,7 +4,7 @@ import java.util.concurrent.RecursiveAction;
 
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (TUTAM - 29-Jun-2021)
 */
 
 public class DatabaseRecruiter
@@ -13,13 +13,27 @@ public class DatabaseRecruiter
     private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
     private static int lastId = 0;
 
+    
+    /** 
+     * @return ArrayList<Recruiter>
+     */
     public static ArrayList<Recruiter> getRecruiterDatabase(){
         return RECRUITER_DATABASE;
     }
+    
+    /** 
+     * @return int
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    
+    /** 
+     * @param id
+     * @return Recruiter
+     * @throws RecruiterNotFoundException
+     */
     public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException {
         Recruiter temp = null;
         try {
@@ -36,12 +50,23 @@ public class DatabaseRecruiter
         return temp;
     }
     
+    
+    /** 
+     * @param recruiter
+     * @return boolean
+     */
     public static boolean addRecruiter(Recruiter recruiter){
         RECRUITER_DATABASE.add(recruiter);
         lastId = recruiter.getId();
         return true;
     }
     
+    
+    /** 
+     * @param id
+     * @return boolean
+     * @throws RecruiterNotFoundException
+     */
     public static boolean removeRecruiter(int id) throws RecruiterNotFoundException {
         boolean temp = true;
         try

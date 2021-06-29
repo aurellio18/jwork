@@ -3,9 +3,17 @@ package aurelliofishandy.jwork;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 29-Jun-2021)
+*/
 @SpringBootApplication
 public class JWork {
 
+
+/** 
+ * @param args
+ */
 public static void main(String[] args) {
     Location l1= new Location("Jawa Barat", "Bandung", "Bismillah");
 

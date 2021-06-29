@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (TUTAM - 29-Jun-2021)
 */
 
 public abstract class Invoice
@@ -69,8 +69,17 @@ public abstract class Invoice
         return this.jobSeeker;
     }
     
+    
+    /** 
+     * @param getInvoiceStatus(
+     * @return PaymentType
+     */
     public abstract PaymentType getPaymentType();
     
+    
+    /** 
+     * @return InvoiceStatus
+     */
     public InvoiceStatus getInvoiceStatus(){
         return this.invoiceStatus;
     }
@@ -85,6 +94,10 @@ public abstract class Invoice
     }
     
 
+    
+    /** 
+     * @param jobs
+     */
     public void setJobs(ArrayList<Job> jobs){
       this.jobs = jobs;
        
@@ -99,11 +112,21 @@ public abstract class Invoice
          
     }
     
+    
+    /** 
+     * @param year
+     * @param month
+     * @param dayOfMonth
+     */
     public void setDate(int year, int month, int dayOfMonth){
         this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
 
+    
+    /** 
+     * @param jobSeeker
+     */
     public abstract void setTotalFee();
     
     /**

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 29-Jun-2021)
+*/
 public class BankPayment extends Invoice
 {
     // instance variables - replace the example below with your own
@@ -26,14 +30,26 @@ public class BankPayment extends Invoice
         
     }
     
+    
+    /** 
+     * @return PaymentType
+     */
     public PaymentType getPaymentType(){
         return this.PAYMENT_TYPE;
     }
     
+    
+    /** 
+     * @return int
+     */
     public int getAdminFee(){
         return this.adminFee;
     }
     
+    
+    /** 
+     * @param adminFee
+     */
     public void setAdminFee(int adminFee){
        this.adminFee = adminFee;
     }
@@ -46,6 +62,10 @@ public class BankPayment extends Invoice
             totalFee -= adminFee;
     }
     
+    
+    /** 
+     * @return String
+     */
     public String toString(){
         String strDate = "" ;
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");

@@ -6,14 +6,28 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 29-Jun-2021)
+*/
+
 @RequestMapping("/bonus")
 @RestController
 public class BonusController {
+    
+    /** 
+     * @return ArrayList<Bonus>
+     */
     @RequestMapping("")
     public ArrayList<Bonus> getAllBonus(){
         return DatabaseBonus.getBonusDatabase();
     }
 
+    
+    /** 
+     * @param referralCode
+     * @return Bonus
+     */
     @RequestMapping("/{referralCode}")
     public Bonus getBonusByReferralCode(@PathVariable String referralCode) {
         Bonus bns = null;
@@ -21,6 +35,11 @@ public class BonusController {
         return bns;
     }
 
+    
+    /** 
+     * @param Code"
+     * @return Bonus
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Bonus addBonus(@RequestParam(value="referral Code") String referralCode,
                       @RequestParam(value="extraFee") int extraFee,

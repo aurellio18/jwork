@@ -1,4 +1,9 @@
 package aurelliofishandy.jwork;
+/**
+* @author (Aurellio Fishandy)
+* @version (TUTAM - 29-Jun-2021)
+*/
+
 public class ReferralCodeAlreadyExistsException extends Exception{
     private Bonus referral_error;
 
@@ -8,6 +13,10 @@ public class ReferralCodeAlreadyExistsException extends Exception{
 
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String getMessage(){
         return super.getMessage()+ referral_error.getReferralCode() + "already exists.";

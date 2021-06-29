@@ -1,6 +1,11 @@
 package aurelliofishandy.jwork;
 import java.util.ArrayList;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (TUTAM - 29-Jun-2021)
+*/
+
 public class FeeCalculator implements Runnable{
 
     public void run(){

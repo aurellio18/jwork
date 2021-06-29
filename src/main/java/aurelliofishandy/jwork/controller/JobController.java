@@ -6,15 +6,29 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 29-Jun-2021)
+*/
+
 @RequestMapping("/job")
 @RestController
 public class JobController {
 
+    
+    /** 
+     * @return ArrayList<Job>
+     */
     @RequestMapping("")
     public ArrayList<Job> getAllJob(){
         return DatabaseJob.getJobDatabase();
     }
 
+    
+    /** 
+     * @param id
+     * @return Job
+     */
     @RequestMapping("/{id}")
     public Job getJobById(@PathVariable int id) {
         Job job = null;
@@ -27,6 +41,11 @@ public class JobController {
         return job;
     }
 
+    
+    /** 
+     * @param recruiterId
+     * @return ArrayList<Job>
+     */
     @RequestMapping("/recruiter/{recruiterId}")
     public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
         ArrayList<Job> job = null;
@@ -34,11 +53,21 @@ public class JobController {
         return job;
     }
 
+    
+    /** 
+     * @param category
+     * @return ArrayList<Job>
+     */
     @RequestMapping("/category/{category}")
     public ArrayList<Job> getJobByCategory(@PathVariable JobCategory category){
         return DatabaseJob.getJobByCategory(category);
     }
 
+    
+    /** 
+     * @param @RequestParam(value="name"
+     * @return Job
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Job addJob(@RequestParam(value="name") String name,
                       @RequestParam(value="fee") int fee,

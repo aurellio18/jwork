@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (TUTAM - 29-Jun-2021)
 */
 public class DatabaseJob
 {
@@ -12,14 +12,28 @@ public class DatabaseJob
     private static ArrayList<Job> JOB_DATABASE= new ArrayList<Job>();
     private static int lastId = 0;
 
+    
+    /** 
+     * @return ArrayList<Job>
+     */
     public static ArrayList<Job> getJobDatabase(){
         return JOB_DATABASE;
     }
 
+    
+    /** 
+     * @return int
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    
+    /** 
+     * @param id
+     * @return Job
+     * @throws JobNotFoundException
+     */
     public static Job getJobById(int id) throws JobNotFoundException{
         for (Job job : JOB_DATABASE) {
             if (id == job.getId()) {
@@ -29,6 +43,11 @@ public class DatabaseJob
         throw new JobNotFoundException(id);
     }
 
+    
+    /** 
+     * @param recruiterId
+     * @return ArrayList<Job>
+     */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
         ArrayList<Job> temp = new ArrayList<>();
         for (int i = 0; i < JOB_DATABASE.size(); i++){
@@ -40,6 +59,11 @@ public class DatabaseJob
         return null;
     }
 
+    
+    /** 
+     * @param category
+     * @return ArrayList<Job>
+     */
     public static ArrayList<Job> getJobByCategory(JobCategory category){
         ArrayList<Job> temp = new ArrayList<>();
         for (int i = 0; i < JOB_DATABASE.size(); i++){
@@ -51,12 +75,23 @@ public class DatabaseJob
         return null;
     }
     
+    
+    /** 
+     * @param job
+     * @return boolean
+     */
     public static boolean addJob(Job job){
         JOB_DATABASE.add(job);
         lastId = job.getId();
         return true;
     }
     
+    
+    /** 
+     * @param id
+     * @return boolean
+     * @throws JobNotFoundException
+     */
     public static boolean removeJob(int id) throws JobNotFoundException {
         boolean temp = true;
         try

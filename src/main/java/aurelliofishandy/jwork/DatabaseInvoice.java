@@ -1,18 +1,37 @@
 package aurelliofishandy.jwork;
 import java.util.ArrayList;
 
+/**
+* @author (Aurellio Fishandy)
+* @version (Modul 2 - 29-Jun-2021)
+*/
+
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
     private static int lastId;
 
+    
+    /** 
+     * @return ArrayList<Invoice>
+     */
     public static ArrayList<Invoice> getInvoiceDatabase(){
         return INVOICE_DATABASE;
     }
 
+    
+    /** 
+     * @return int
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    
+    /** 
+     * @param id
+     * @return Invoice
+     * @throws InvoiceNotFoundException
+     */
     public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException{
         Invoice val = null;
         try
@@ -32,6 +51,11 @@ public class DatabaseInvoice {
         return val;
     }
 
+    
+    /** 
+     * @param jobseekerId
+     * @return ArrayList<Invoice>
+     */
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
         ArrayList<Invoice> temp = new ArrayList<>();
         for (int i=0; i < INVOICE_DATABASE.size(); i++) {
@@ -42,6 +66,12 @@ public class DatabaseInvoice {
         return temp.isEmpty() ? null : temp;
     }
 
+    
+    /** 
+     * @param invoice
+     * @return boolean
+     * @throws OngoingInvoiceAlreadyExistsException
+     */
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{
         for (Invoice invc : INVOICE_DATABASE)
         {
@@ -55,6 +85,12 @@ public class DatabaseInvoice {
         return true;
     }
 
+    
+    /** 
+     * @param id
+     * @param invoiceStatus
+     * @return boolean
+     */
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
         for (int i=0; i < INVOICE_DATABASE.size(); i++) {
             if(INVOICE_DATABASE.get(i).getId() == id) {
@@ -65,6 +101,12 @@ public class DatabaseInvoice {
         return false;
     }
 
+    
+    /** 
+     * @param id
+     * @return boolean
+     * @throws InvoiceNotFoundException
+     */
     public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
         for (Invoice invc : INVOICE_DATABASE)
         {

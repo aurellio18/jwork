@@ -8,9 +8,8 @@ import java.util.Date;
 
 /**
 * @author (Aurellio Fishandy)
-* @version (Modul 2 - 18-Mar-2021)
+* @version (Modul 2 - 29-Jun-2021)
 */
-
 public class Jobseeker
 {
     // memasukkan variabel yang digunakan
