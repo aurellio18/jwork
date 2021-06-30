@@ -33,6 +33,7 @@ public class Recruiter
     }
     
     /**
+     * Mendapatkan ID
      * getter id
      * @return id
     */    
@@ -41,6 +42,7 @@ public class Recruiter
     }
     
     /**
+     * Mendapatkan nama
      * getter Name
      * @return name
     */
@@ -49,6 +51,7 @@ public class Recruiter
     }
     
     /**
+     * Mendapatkan email
      * getter email
      * @return email
     */
@@ -57,6 +60,7 @@ public class Recruiter
     }    
     
     /**
+     * Mendapatkan nomor telepon
      * getter phoneNumber
      * @return phoneNumber
     */
@@ -65,6 +69,7 @@ public class Recruiter
     }
     
     /**
+     * Mendapatkan lokasi
      * getter location
      * @return location
     */
@@ -73,6 +78,7 @@ public class Recruiter
     }    
     
     /**
+     * Menentukan ID
      * setter id
      * @param id
     */
@@ -82,6 +88,7 @@ public class Recruiter
     }
     
     /**
+     * Menentukan nama
      * setter name
      * @param name
     */
@@ -91,6 +98,7 @@ public class Recruiter
     }
     
     /**
+     * Menentukan email
      * setter email
      * @param email
     */
@@ -100,6 +108,7 @@ public class Recruiter
     }
     
     /**
+     * Menentukan nomor telefon
      * setter phoneNumber
      * @param id
     */
@@ -108,6 +117,7 @@ public class Recruiter
     }
     
     /**
+     * Menentukan lokasi
      * setter location
      * @param location
     */
@@ -117,6 +127,7 @@ public class Recruiter
     
     
     /** 
+     * Print rekruter
      * @return String
      */
     public String toString(){

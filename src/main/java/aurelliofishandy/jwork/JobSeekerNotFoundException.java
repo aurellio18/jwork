@@ -5,6 +5,7 @@ package aurelliofishandy.jwork;
 * @version (TUTAM - 29-Jun-2021)
 */
 
+// Mengecek apakah Jobseeker yang dimaksud ada pada database atau tidak
 public class JobSeekerNotFoundException extends Exception {
 
     private int jobseeker_error;

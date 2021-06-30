@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class BonusController {
     
     /** 
+     * Mendapatkan Seluruh informasi
      * @return ArrayList<Bonus>
      */
     @RequestMapping("")
@@ -25,6 +26,7 @@ public class BonusController {
 
     
     /** 
+     * Mendapatkan referralcode
      * @param referralCode
      * @return Bonus
      */
@@ -37,6 +39,7 @@ public class BonusController {
 
     
     /** 
+     * Menambahkan bonus sesuai dengan referral code
      * @param Code"
      * @return Bonus
      */

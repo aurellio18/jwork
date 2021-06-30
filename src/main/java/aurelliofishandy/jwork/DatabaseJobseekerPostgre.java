@@ -22,6 +22,7 @@ public class DatabaseJobseekerPostgre {
 
     
     /** 
+     * Menambah Jobseeker
      * @param jobseeker
      * @return Jobseeker
      */
@@ -54,7 +55,8 @@ public class DatabaseJobseekerPostgre {
     }
 
     
-    /** 
+    /**
+     * Mengambil ID 
      * @return int
      */
     public static int getLastId() {
@@ -78,6 +80,7 @@ public class DatabaseJobseekerPostgre {
 
     
     /** 
+     * Mengambil jobseeker menggunakan id
      * @param id
      * @return Jobseeker
      */
@@ -107,7 +110,8 @@ public class DatabaseJobseekerPostgre {
     }
 
     
-    /** 
+    /**
+     * Menghapus jobseeker pada database 
      * @param id
      * @return boolean
      */
@@ -128,6 +132,7 @@ public class DatabaseJobseekerPostgre {
 
     
     /** 
+     * Mengecek email dan password pada database
      * @param emailInput
      * @param passwordInput
      * @return Jobseeker
@@ -161,6 +166,7 @@ public class DatabaseJobseekerPostgre {
 
     
     /** 
+     * Memperlihatkan seluruh data yang ada pada database jobseeker
      * @return ArrayList<Jobseeker>
      */
     public static ArrayList<Jobseeker> getJobseekerDatabase() {

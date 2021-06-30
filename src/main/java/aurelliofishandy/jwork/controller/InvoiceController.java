@@ -15,6 +15,7 @@ import java.util.prefs.BackingStoreException;
 public class InvoiceController {
     
     /** 
+     * Mendapatkan Seluruh informasi
      * @return ArrayList<Invoice>
      */
     @RequestMapping("")
@@ -24,6 +25,7 @@ public class InvoiceController {
 
     
     /** 
+     * Mendapatkan ID
      * @param id
      * @return Invoice
      */
@@ -41,6 +43,7 @@ public class InvoiceController {
 
     
     /** 
+     * Mendapatkan ID Jobseeker
      * @param jobseekerId
      * @return ArrayList<Invoice>
      */
@@ -53,6 +56,7 @@ public class InvoiceController {
 
     
     /** 
+     * Mengubah Invoice Status
      * @param @RequestParam(value="id"
      * @return Invoice
      * @throws InvoiceNotFoundException
@@ -68,6 +72,7 @@ public class InvoiceController {
 
     
     /** 
+     * Menghapus invoice
      * @param id
      * @return Boolean
      */
@@ -83,6 +88,7 @@ public class InvoiceController {
     }
     
     /** 
+     * Membuat bank payment
      * @param "jobIdList"
      * @return Invoice
      */
@@ -112,6 +118,7 @@ public class InvoiceController {
 
     
     /** 
+     * membuat ewallet payment
      * @param "jobIdList"
      * @return Invoice
      */

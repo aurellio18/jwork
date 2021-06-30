@@ -11,7 +11,14 @@ public class Bonus
     private String referralCode;
     private boolean active;
 
-
+    /**
+     * Konstruktur dari Bonus
+     * @param id
+     * @param referralCode
+     * @param extraFee
+     * @param minTotalFee
+     * @param active
+     */
     public Bonus(int id, String referralCode, int extraFee, int minTotalFee, boolean active)
     {
       this.id = id;
@@ -24,15 +31,8 @@ public class Bonus
     
     
     /** 
+     * Mendapatkan ID
      * @return int
-     */
-    
-    /** 
-     * @return int
-     */
-    
-    /** 
-     * @return String
      */
     public  int getId(){
         return this.id;
@@ -40,15 +40,8 @@ public class Bonus
     
     
     /** 
-     * @return int
-     */
-    
-    /** 
+     *  Mendapatkan ReferralCode
      * @return String
-     */
-    
-    /** 
-     * @return int
      */
     public String getReferralCode(){
         return this.referralCode;
@@ -56,10 +49,7 @@ public class Bonus
     
     
     /** 
-     * @return boolean
-     */
-    
-    /** 
+     *  Mendapatkan tambahan fee
      * @return int
      */
     public int getExtraFee(){
@@ -67,7 +57,8 @@ public class Bonus
     }  
     
     
-    /** 
+    /**
+     *  Mendapatkan total fee 
      * @return int
      */
     public int getMinTotalFee(){
@@ -76,6 +67,7 @@ public class Bonus
     
     
     /** 
+     *  Mendapatkan aktivasi Bonus
      * @return boolean
      */
     public boolean getActive(){
@@ -85,24 +77,17 @@ public class Bonus
        
     
     /** 
-     * @param id
-     */
-    
-    /** 
+     * Menentukan ID
      * @param id
      */
     public void setId(int id){
-    
-    /** 
-     * @param referralCode
-     * @return String
-     */
       this.id = id;
         
     }
     
     
     /** 
+     * Menentukan Referral Code
      * @param referralCode
      */
     public void setReferralCode(String referralCode){
@@ -112,6 +97,7 @@ public class Bonus
     
     
     /** 
+     * Menentukan fee tambahan
      * @param extraFee
      */
     public void setExtraFee(int extraFee){
@@ -120,7 +106,8 @@ public class Bonus
     }
     
     
-    /** 
+    /**
+     * Menentukan total fee 
      * @param minTotalFee
      */
     public void setMinTotalFee(int minTotalFee){
@@ -130,6 +117,7 @@ public class Bonus
     
     
     /** 
+     * Menentukan aktivasi bonus
      * @param active
      */
     public void setActive(boolean active){
@@ -139,6 +127,7 @@ public class Bonus
     
     
     /** 
+     * Print Bonus
      * @return String
      */
     public String toString(){

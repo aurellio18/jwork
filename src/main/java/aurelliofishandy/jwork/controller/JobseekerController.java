@@ -13,6 +13,7 @@ public class JobseekerController {
 
     
     /** 
+     * Mendapatkan Seluruh informasi
      * @param @RequestParam(value="name"
      * @param name
      * @return String
@@ -23,7 +24,8 @@ public class JobseekerController {
     }
 
     
-    /** 
+    /**
+     * Mendapatkan ID 
      * @param id
      * @return Jobseeker
      */
@@ -41,6 +43,7 @@ public class JobseekerController {
 
     
     /** 
+     * Menambahkan jobseeker dengan register
      * @param @RequestParam(value="name"
      * @return Jobseeker
      */
@@ -61,6 +64,7 @@ public class JobseekerController {
 
     
     /** 
+     * Mengecek email & password sudah terdapat pada database atau belum
      * @param @RequestParam(value="email"
      * @return Jobseeker
      */

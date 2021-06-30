@@ -5,6 +5,7 @@ package aurelliofishandy.jwork;
 * @version (TUTAM - 29-Jun-2021)
 */
 
+// Mengecek apakah email sudah pernah register atau belum
 public class EmailAlreadyExistsException extends Exception{
     private Jobseeker jobseeker_error;
 

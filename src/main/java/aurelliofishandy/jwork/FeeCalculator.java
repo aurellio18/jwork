@@ -5,7 +5,7 @@ import java.util.ArrayList;
 * @author (Aurellio Fishandy)
 * @version (TUTAM - 29-Jun-2021)
 */
-
+// Menghitung invoice ID
 public class FeeCalculator implements Runnable{
 
     public void run(){

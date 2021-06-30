@@ -14,6 +14,7 @@ public class DatabaseJob
 
     
     /** 
+     * Mengambil Job
      * @return ArrayList<Job>
      */
     public static ArrayList<Job> getJobDatabase(){
@@ -21,7 +22,8 @@ public class DatabaseJob
     }
 
     
-    /** 
+    /**
+     * Mengambil id terakhir 
      * @return int
      */
     public static int getLastId(){
@@ -30,6 +32,7 @@ public class DatabaseJob
 
     
     /** 
+     * Mengambil Job dari id
      * @param id
      * @return Job
      * @throws JobNotFoundException
@@ -44,7 +47,8 @@ public class DatabaseJob
     }
 
     
-    /** 
+    /**
+     * Mengambil Job dari recruiter
      * @param recruiterId
      * @return ArrayList<Job>
      */
@@ -61,6 +65,7 @@ public class DatabaseJob
 
     
     /** 
+     * Mengambil Job dari kategori
      * @param category
      * @return ArrayList<Job>
      */
@@ -77,6 +82,7 @@ public class DatabaseJob
     
     
     /** 
+     * Menambah Job
      * @param job
      * @return boolean
      */
@@ -88,6 +94,7 @@ public class DatabaseJob
     
     
     /** 
+     * Menghapus Job
      * @param id
      * @return boolean
      * @throws JobNotFoundException

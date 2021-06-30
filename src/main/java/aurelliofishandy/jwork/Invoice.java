@@ -30,6 +30,7 @@ public abstract class Invoice
     }
     
     /**
+     * Mendapatkan ID
      * getter id
      * @return id
     */  
@@ -38,6 +39,7 @@ public abstract class Invoice
     }
     
     /**
+     * Mendapatkan ID job
      * getter idJob
      * @return idJob
     */  
@@ -46,6 +48,7 @@ public abstract class Invoice
     }
     
     /**
+     * Mendapatkan tanggal
      * getter date
      * @return date
     */  
@@ -54,6 +57,7 @@ public abstract class Invoice
     }    
     
     /**
+     * Mendapatkan total fee
      * getter totalFee
      * @return totalFee
     */  
@@ -62,22 +66,23 @@ public abstract class Invoice
     }
     
     /**
+     * Mendapatkan jobseeker
      * getter jobSeeker
      * @return jobSeeker
     */  
     public Jobseeker getJobSeeker(){
         return this.jobSeeker;
     }
-    
-    
+        
     /** 
+     * Mendapatkan payment type
      * @param getInvoiceStatus(
      * @return PaymentType
      */
     public abstract PaymentType getPaymentType();
-    
-    
+        
     /** 
+     * Mendapatkan invoice status
      * @return InvoiceStatus
      */
     public InvoiceStatus getInvoiceStatus(){
@@ -85,6 +90,7 @@ public abstract class Invoice
     }
     
     /**
+     * menentukan ID
      * setter id
      * @param id
     */
@@ -93,9 +99,8 @@ public abstract class Invoice
       
     }
     
-
-    
     /** 
+     * menentukan job
      * @param jobs
      */
     public void setJobs(ArrayList<Job> jobs){
@@ -104,6 +109,7 @@ public abstract class Invoice
     }
     
     /**
+     * menentukan date
      * setter date
      * @param date
     */
@@ -114,6 +120,7 @@ public abstract class Invoice
     
     
     /** 
+     * menentukan date menggunakan gregorian calendar
      * @param year
      * @param month
      * @param dayOfMonth
@@ -122,14 +129,14 @@ public abstract class Invoice
         this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
-
-    
     /** 
+     * menentukan total fee
      * @param jobSeeker
      */
     public abstract void setTotalFee();
     
     /**
+     * menentukan jobseeker
      * setter jobSeeker
      * @param jobSeeker
     */
@@ -137,6 +144,10 @@ public abstract class Invoice
       this.jobSeeker = jobSeeker;    
     }
 
+    /**
+     * menentukan invoice status
+     * @param invoiceStatus
+     */
     public void setInvoiceStatus(InvoiceStatus invoiceStatus){this.invoiceStatus = invoiceStatus;}
 
     public abstract String toString();

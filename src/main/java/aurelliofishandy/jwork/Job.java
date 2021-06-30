@@ -32,6 +32,7 @@ public class Job
     }
     
     /**
+     * Mendapatkan ID
      * getter id
      * @return id
     */  
@@ -40,6 +41,7 @@ public class Job
     }
     
     /**
+     * Mendapatkan nama
      * getter Name
      * @return name
     */
@@ -48,6 +50,7 @@ public class Job
     }
     
     /**
+     * Mendapatkan fee
      * getter Fee
      * @return Fee
     */  
@@ -57,6 +60,7 @@ public class Job
     
     
     /**
+     * Mendapatkan recruiter
      * getter recruiter
      * @return recruiter
     */
@@ -66,6 +70,7 @@ public class Job
     
     
     /** 
+     * Mendapatkan kategori job
      * @return JobCategory
      */
     public JobCategory getCategory(){
@@ -73,6 +78,7 @@ public class Job
     }
     
     /**
+     * Menentukan ID
      * setter id
      * @param id
     */
@@ -82,6 +88,7 @@ public class Job
     }
     
     /**
+     * Menentukan nama
      * setter name
      * @param name
     */
@@ -91,6 +98,7 @@ public class Job
     }
     
     /**
+     * Menentukan fee
      * setter Fee
      * @param Fee
     */
@@ -100,6 +108,7 @@ public class Job
     }
     
     /**
+     * Menentukan recruiter
      * setter recruiter
      * @param recruiter
     */
@@ -108,6 +117,7 @@ public class Job
     }
     
     /**
+     * Menentukan kategori job
      * setter Category
      * @param Category
     */
@@ -117,6 +127,7 @@ public class Job
     
     
     /** 
+     * print job
      * @return String
      */
     public String toString(){

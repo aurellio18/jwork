@@ -13,6 +13,7 @@ public class DatabaseJobseeker
 
     
     /** 
+     * Mengambil jobseeker 
      * @return ArrayList<Jobseeker>
      */
     public static ArrayList<Jobseeker> getDatabaseJobseeker(){
@@ -21,6 +22,7 @@ public class DatabaseJobseeker
 
     
     /** 
+     * Mengambil  id terakhir
      * @return int
      */
     public static int getLastId(){
@@ -29,6 +31,7 @@ public class DatabaseJobseeker
 
     
     /** 
+     * Mengambil jobseeker menggunakan id
      * @param id
      * @return Jobseeker
      * @throws JobSeekerNotFoundException
@@ -42,6 +45,7 @@ public class DatabaseJobseeker
 
     
     /** 
+     * Menambahkan jobseeker 
      * @param jobseeker
      * @return boolean
      * @throws EmailAlreadyExistsException
@@ -60,6 +64,7 @@ public class DatabaseJobseeker
     
     
     /** 
+     * Menghapus jobseeker 
      * @param id
      * @return boolean
      * @throws JobSeekerNotFoundException
@@ -83,6 +88,7 @@ public class DatabaseJobseeker
 
     
     /** 
+     * Mengambil jobseeker agar dapat login
      * @param email
      * @param password
      * @return Jobseeker

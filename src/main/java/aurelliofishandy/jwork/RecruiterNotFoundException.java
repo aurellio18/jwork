@@ -6,7 +6,7 @@ package aurelliofishandy.jwork;
 * @version (TUTAM - 29-Jun-2021)
 */
 
-
+// Mengecek apakah Recruiter yang dimaksud sudah ada pada database atau belum
 public class RecruiterNotFoundException extends Exception{
 
     private int recruiter_error;

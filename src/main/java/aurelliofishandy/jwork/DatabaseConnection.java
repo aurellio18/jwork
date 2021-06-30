@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 public class DatabaseConnection {
     
     /** 
+     * Mengkoneksikan database dengan postgresql
      * @return Connection
      */
     public static Connection connection() {

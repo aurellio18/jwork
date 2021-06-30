@@ -4,6 +4,8 @@ package aurelliofishandy.jwork;
 * @author (Aurellio Fishandy)
 * @version (TUTAM - 29-Jun-2021)
 */
+
+// Mengecek apakah invoice yang dimaksud sudah ada pada database atau belum
 public class InvoiceNotFoundException extends Exception {
 
         private int invoice_error;

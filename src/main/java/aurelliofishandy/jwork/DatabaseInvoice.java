@@ -12,6 +12,7 @@ public class DatabaseInvoice {
 
     
     /** 
+     * Mengambil Invoice
      * @return ArrayList<Invoice>
      */
     public static ArrayList<Invoice> getInvoiceDatabase(){
@@ -20,6 +21,7 @@ public class DatabaseInvoice {
 
     
     /** 
+     * Mengambil id terakhir
      * @return int
      */
     public static int getLastId(){
@@ -28,6 +30,7 @@ public class DatabaseInvoice {
 
     
     /** 
+     * Mengambil Invoice dari id
      * @param id
      * @return Invoice
      * @throws InvoiceNotFoundException
@@ -52,7 +55,8 @@ public class DatabaseInvoice {
     }
 
     
-    /** 
+    /**
+     * Mengambil Invoice dari jobseeker 
      * @param jobseekerId
      * @return ArrayList<Invoice>
      */
@@ -68,6 +72,7 @@ public class DatabaseInvoice {
 
     
     /** 
+     * Menambah Invoice
      * @param invoice
      * @return boolean
      * @throws OngoingInvoiceAlreadyExistsException
@@ -87,6 +92,7 @@ public class DatabaseInvoice {
 
     
     /** 
+     * Mengubah invoice status
      * @param id
      * @param invoiceStatus
      * @return boolean
@@ -103,6 +109,7 @@ public class DatabaseInvoice {
 
     
     /** 
+     * menghapus Invoice
      * @param id
      * @return boolean
      * @throws InvoiceNotFoundException

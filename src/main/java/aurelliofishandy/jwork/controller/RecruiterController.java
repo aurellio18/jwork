@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class RecruiterController {
     
     /** 
+     *  Mendapatkan Seluruh informasi
      * @return ArrayList<Recruiter>
      */
     @RequestMapping("")
@@ -25,6 +26,7 @@ public class RecruiterController {
 
     
     /** 
+     * Mendapatkan ID
      * @param id
      * @return Recruiter
      */
@@ -42,6 +44,7 @@ public class RecruiterController {
 
     
     /** 
+     * membuat recruiter baru
      * @param @RequestParam(value="name"
      * @return Recruiter
      */

@@ -16,7 +16,8 @@ import java.util.ArrayList;
 public class JobController {
 
     
-    /** 
+    /**
+     * Mendapatkan Seluruh informasi 
      * @return ArrayList<Job>
      */
     @RequestMapping("")
@@ -26,6 +27,7 @@ public class JobController {
 
     
     /** 
+     * Mendapatkan ID
      * @param id
      * @return Job
      */
@@ -43,6 +45,7 @@ public class JobController {
 
     
     /** 
+     * Mendapatkan ID Recruiter
      * @param recruiterId
      * @return ArrayList<Job>
      */
@@ -55,6 +58,7 @@ public class JobController {
 
     
     /** 
+     * Mendapatkan Kategori Job
      * @param category
      * @return ArrayList<Job>
      */
@@ -65,6 +69,7 @@ public class JobController {
 
     
     /** 
+     * Membuat Job baru
      * @param @RequestParam(value="name"
      * @return Job
      */

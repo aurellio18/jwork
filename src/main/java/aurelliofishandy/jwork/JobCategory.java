@@ -7,6 +7,7 @@ package aurelliofishandy.jwork;
 
 public enum JobCategory
 {
+    // Macam macam kategori job
     WebDeveloper("Web Developer"),
     FrontEnd("Front End"),
     BackEnd("Back End"),

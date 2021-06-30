@@ -37,7 +37,17 @@ public class Jobseeker
         setEmail(email);
         setPassword(password);
     }
-    
+
+    /**
+     * 
+     * @param id
+     * @param name
+     * @param email
+     * @param password
+     * @param year
+     * @param month
+     * @param dayOfMonth
+     */
     public Jobseeker(int id, String name, String email,
                     String password, int year, int month,
                     int dayOfMonth) {
@@ -48,6 +58,13 @@ public class Jobseeker
         this.setJoinDate(year, month, dayOfMonth);
     }
     
+    /**
+     * 
+     * @param id
+     * @param name
+     * @param email
+     * @param password
+     */
     public Jobseeker(int id, String name, String email,
                     String password) {
         this.id = id;
@@ -57,6 +74,7 @@ public class Jobseeker
     }
     
     /**
+     * Mendapatkan ID
      * getter id
      * @return id
     */  
@@ -65,6 +83,7 @@ public class Jobseeker
     }
     
     /**
+     * Mendapatkan nama
      * getter Name
      * @return name
     */
@@ -73,6 +92,7 @@ public class Jobseeker
     }
     
     /**
+     * Mendapatkan email
      * getter email
      * @return email
     */
@@ -81,6 +101,7 @@ public class Jobseeker
     }    
     
     /**
+     * Mendapatkan password
      * getter password
      * @return password
     */  
@@ -89,6 +110,7 @@ public class Jobseeker
     }
     
     /**
+     * Mendapatkan joinDate
      * getter joinDate
      * @return joinDate
     */  
@@ -97,6 +119,7 @@ public class Jobseeker
     }
     
     /**
+     * Menentukan ID
      * setter id
      * @param id
     */
@@ -105,6 +128,7 @@ public class Jobseeker
     }
     
     /**
+     * Menentukan nama
      * setter name
      * @param name
     */
@@ -113,6 +137,7 @@ public class Jobseeker
     }
     
     /**
+     * Menentukan email
      * setter email
      * @param email
     */
@@ -127,6 +152,7 @@ public class Jobseeker
     }
     
     /**
+     * Menentukan password
      * setter password
      * @param password
     */
@@ -141,6 +167,7 @@ public class Jobseeker
     }
     
     /**
+     * Menentukan joindate
      * setter joinDate
      * @param joinDate
     */
@@ -149,10 +176,12 @@ public class Jobseeker
         this.joinDate = joinDate;
     }
     
+    // Menentukan joindate sesuai gregorian calendar
     public void setJoinDate(int year, int month, int dayOfMonth){
         this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
     }
     
+    //print jobseeker
     public String toString(){
         String strDate = "" ;
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");

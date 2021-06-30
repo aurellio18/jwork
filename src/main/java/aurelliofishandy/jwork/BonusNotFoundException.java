@@ -4,6 +4,7 @@ package aurelliofishandy.jwork;
 * @version (Modul 2 - 29-Jun-2021)
 */
 
+// Mengecek apakah terdapat bonus atau tidak
 public class BonusNotFoundException extends Exception{
 
     private int bonus_error;
@@ -15,6 +16,7 @@ public class BonusNotFoundException extends Exception{
 
     
     /** 
+     * Memperlihatkan error
      * @return String
      */
     @Override

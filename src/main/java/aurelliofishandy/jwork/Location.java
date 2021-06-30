@@ -24,6 +24,7 @@ public class Location
     }
     
     /**
+     * mendapatkan provinsi lokasi
      * getter province
      * @return province
     */
@@ -33,6 +34,7 @@ public class Location
     }
     
     /**
+     * mendapatkan kota lokasi
      * getter city
      * @return city
     */
@@ -41,6 +43,7 @@ public class Location
     }
     
     /**
+     * mendapatkan deskripsi lokasi
      * getter description
      * @return description
     */
@@ -50,6 +53,7 @@ public class Location
     }    
     
     /**
+     * menentukan provinsi lokasi
      * setter province
      * @param province
     */
@@ -60,6 +64,7 @@ public class Location
     }
     
     /**
+     * menentukan kota lokasi
      * setter city
      * @param city
     */
@@ -68,6 +73,7 @@ public class Location
     }
     
     /**
+     * menentukan deskripsi lokasi
      * setter description
      * @param description
     */
@@ -78,6 +84,7 @@ public class Location
     
     
     /** 
+     * print lokasi
      * @return String
      */
     public String toString(){

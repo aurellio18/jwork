@@ -6,6 +6,7 @@ package aurelliofishandy.jwork;
 
 public enum PaymentType
 {
+    // macam-macam payment
     BankPayment("Bank Payment"),
     EwalletPayment("Ewallet Payment");
     

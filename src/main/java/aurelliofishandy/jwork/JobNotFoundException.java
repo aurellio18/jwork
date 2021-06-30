@@ -5,6 +5,7 @@ package aurelliofishandy.jwork;
 * @version (TUTAM - 29-Jun-2021)
 */
 
+// Mengecek apakah Job yang dimaksud ada pada database atau tidak
 public class JobNotFoundException extends Exception {
 
     private int job_error;
